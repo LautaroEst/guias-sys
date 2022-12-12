@@ -1,0 +1,122 @@
+\myheader{Guía 5: Muestreo e Interpolación}
+
+
+\begin{ejercicio}
+    A continuación se muestra el sistema global para filtrar una señal en tiempo continuo utilizando un filtro en tiempo discreto.
+    \begin{center}
+        \input{05_muestreo/plots/5-ad_da}
+    \end{center}
+    Asumiendo que $H(e^{j\Omega})$ y $H_r(j\omega)$ tienen la forma
+    \begin{center}
+        \input{05_muestreo/plots/5-ad_da_1}
+    \end{center}
+    se pide:
+    
+    \inciso Para el caso en que $\frac{1}{T}=20\;\mathrm{kHz}$ y la transformada $X_c(j\omega)$ de $x_c(t)$ es
+    \begin{center}
+        \input{05_muestreo/plots/5-ad_da_2}
+    \end{center}
+    con $f_M=10\;\mathrm{kHz}$ graficar las transformadas $X_s(j\omega)$ y $X(e^{j\Omega})$ de $x_s(t)$ y $x(n)$ respectivamente.
+    
+    \inciso Determinar para qué rango de valores de $T$, el sistema completo con entrada $x_c(t)$ de banda limitada ($2\pi f_M=\mbox{frecuencia máxima de la señal}$) y salida $y_r(t)$ es equivalente al sistema LTI con respuesta en frecuencia $H_{eff}(j\omega)=\begin{cases}1 & \mbox{si $\omega \in (-\omega_c,\omega_c)$}\\ 0 & \mbox{en otro caso}\end{cases}$. Determinar el valor de $\omega_c$ en función de $T$.
+    
+    \end{ejercicio}
+    
+    
+    \begin{ejercicio}
+    La señal discreta $x_d(n)=\cos\left(\frac{\pi}{4}n\right)$ con $n\in\mathbb{Z}$ se obtuvo del muestreo de la señal continua $x_c(n)=\cos\left(\omega_0 t\right)$ con $t\in\mathbb{R}$ a una frecuencia de muestreo $F_S = 1000\;\mathrm{Hz}$. ¿Qué valores de $\omega_0$ positivos resultarían en la secuencia $x_d(n)$?
+    \end{ejercicio}
+    
+    
+    \begin{ejercicio}
+    Dado el siguiente sistema de muestreo
+    \begin{center}
+    \input{05_muestreo/plots/5-2}
+    \end{center}
+    y considerando que $\omega_1 > \omega_2-\omega_1$, encontrar el máximo valor de $T$ y los valores de las constantes $A$, $\omega_a$, $\omega_b$ tales que $x(t)=x_r(t)$ cuando la señal $x(t)$ tiene un espectro como se muetra a continuación
+    \begin{center}
+    \input{05_muestreo/plots/5-2bis}
+    \end{center}
+    \end{ejercicio}
+    
+    \begin{ejercicio}
+    Sea el sistema de muestreo como se muestra a continuación:
+    \begin{center}
+    \input{05_muestreo/plots/5-3}
+    \end{center}
+    Para $x(t)=\cos\left(\frac{2\pi}{T}t\right)$ encontrar el intervalo de valores de $\Delta$ de manera que $y(t)$ sea proporcional a $x(at)$ para algún $a\in(0,1)$. Determinar el valor de $a$ en términos de $T$ y de $\Delta$.
+    \end{ejercicio}
+    
+    \begin{ejercicio}
+    Sea el siguiente sistema de muestreo
+    \begin{center}
+    \input{05_muestreo/plots/5-4}
+    \end{center}
+    Dada una señal $x(t)$ cuya transformada de Fourier es como se muestra a continuación:
+    \begin{center}
+    \input{05_muestreo/plots/5-4bis}
+    \end{center}
+    se pide:
+    
+    \inciso Para $T=\frac{\pi}{2\omega_M}$ dibujar la transformada de Fourier de $x_p(t)$ e $y(t)$.
+    
+    \inciso Para $T=\frac{\pi}{2\omega_M}$ determinar un sistema con el cual se pueda recuperar $x(t)$ a partir de $x_p(t)$.
+    
+    \inciso Para $T=\frac{\pi}{2\omega_M}$ determinar un sistema con el cual se pueda recuperar $x(t)$ a partir de $y(t)$.
+    
+    \inciso Determinar el valor \emph{máximo} de $T$ en relación a $\omega_M$ para el cual $x(t)$ puede recuperarse a partir de $x_p(t)$ o de $y(t)$.
+    
+    \end{ejercicio}
+    
+    \begin{ejercicio}
+    En la siguiente figura se muestra un sistema en el cual la señal de entrada es multiplicada por una onda cuadrada periódica $s(t)$ de período $T$. 
+    \begin{center}
+    \input{05_muestreo/plots/5-5}
+    \end{center}
+    Suponiendo que la entrada es de banda limitada ($X(j\omega)=0\; \forall \omega>\omega_M$
+    
+    \inciso Para $\Delta=\frac{T}{3}$ determinar en términos de $\omega_M$ el valor máximo de $T$ para el cual no hay traslape entre las réplicas de $X(j\omega)$ en $W(j\omega)$.
+    
+    \inciso Para $\Delta=\frac{T}{4}$ determinar en términos de $\omega_M$ el valor máximo de $T$ para el cual no hay traslape entre las réplicas de $X(j\omega)$ en $W(j\omega)$
+    \end{ejercicio}
+    
+    \begin{ejercicio}
+    Escribir las ecuaciones en diferencias de un interpolador de orden cero y otro de orden uno, en su versión discreta. 
+    
+    \inciso Implementar las ecuaciones en \Keyboardsym
+    
+    \inciso Interpolar la señal $x_e(n)$ definida como
+    \begin{equation*}
+        x_e(n) = \begin{cases}
+        \cos(\frac{2\pi100}{L}) & \mbox{para $n=kL$, $k\in \mathbb{Z}$} \\
+        0 & \mbox{en otro caso}
+        \end{cases}
+    \end{equation*}
+    
+    \inciso ¿Es posible implementar realmente una interpolación ideal? ¿Qué aproximaciones se podrían hacer para obtenerlo y cómo se altera el espectro de la señal al hacerlas?
+    \end{ejercicio}
+    
+    \begin{ejercicio}
+    Dados los siguientes sistemas en cascada
+    \begin{center}
+        \input{05_muestreo/plots/5-up_down_eq}
+    \end{center}
+    determinar la respuesta en frecuencia del sistema equivalente $H_{eff}(e^{j\Omega})$.
+    \end{ejercicio}
+    
+    \begin{ejercicio}
+    Sea $x_c(t)$ una señal real de tiempo continuo cuya frecuencia superior es $\omega_M = 2\pi 250\mathrm\;{Hz}$, y la señal $y_c(t)$ definida como $y_c(t) = x_c(t - \frac{1}{1000})$.
+    
+    \inciso Determinar si es posible recuperar $x_c(t)$ a partir de $x(n)=x_c(\frac{n}{500})$.
+    
+    \inciso Determinar si es posible recuperar $y_c(t)$ a partir de $y(n)=y_c(\frac{n}{500})$.
+    
+    \inciso Determinar si es posible obtener un sistema $H(e^{j\Omega})$ de manera que si se implementa en la siguiente estructura en cascada
+    \begin{center}
+        \input{05_muestreo/plots/5-up2_down2}
+    \end{center}
+    es posible obtener $y(n)$ a partir de $x(n)$.
+    
+    \inciso Determinar si es posible obtener $y(n)$ a partir de $x(n)$ utilizando un único sistema LTI con respuesta en frecuencia $H_{eff}(e^{j\Omega})$. En caso de que así sea, obtener $H_{eff}(e^{j\Omega})$.
+    
+    \end{ejercicio}

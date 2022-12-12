@@ -1,0 +1,27 @@
+\begin{tikzpicture}[scale=0.6]
+    \begin{axis}[
+        x=.06\textwidth,y=0.1\textwidth,
+    	axis y line=center,
+    	axis x line=middle,
+    	xlabel=$t$,ylabel=$x(t)$,
+    	xmin=-7.9,xmax=7.5,
+    	ymin=-0.3,ymax=2.3,
+    	xticklabel style = {xshift=0},
+    	yticklabel style = {yshift=5}
+	]
+	\diracdelta{-6}{2};
+	\diracdelta{-5}{1};
+	\diracdelta{-4}{2};
+	\diracdelta{-3}{1};
+	\diracdelta{-2}{2};
+	\diracdelta{-1}{1};
+	\diracdelta{0}{2};
+	\diracdelta{1}{1};
+	\diracdelta{2}{2};
+	\diracdelta{3}{1};
+	\diracdelta{4}{2};
+	\diracdelta{5}{1};
+	\node at (axis cs:6.5,1) {\Large $\cdots$} ;
+	\node at (axis cs:-7,1) {\Large $\cdots$} ;
+    \end{axis}
+\end{tikzpicture}

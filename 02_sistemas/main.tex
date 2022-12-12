@@ -1,0 +1,162 @@
+\myheader{Guía 2: Caracterización de un Sistema}
+
+\begin{ejercicio}
+    Para el sistema en tiempo continuo definido por 
+    \begin{align*}
+        \inciso y(t) = e^{-t} x(t) & \hfill & \inciso y(t) = 2x(t) + \cos(2t)
+    \end{align*}
+    se pide:
+    \begin{itemize}
+        \item Determinar si el sistema es lineal.
+        \item Encontrar la respuesta del sistema a $x(t)=\delta(t-t_0)$ para cualquier $t_0\in \mathbb{R}$. ¿El sistema es LTI?
+        \item Decidir si es posible obtener cualquier respuesta del sistema a partir de la respuesta a $x(t)=\delta(t-t_0)$.
+    \end{itemize}
+    \end{ejercicio}
+    
+    \begin{ejercicio}
+    Dar, si es posible, un ejemplo de un sistema en tiempo continuo en donde conocer la respuesta a $x(t)=\delta(t-t_0)$ para todo $t_0\in \mathbb{R}$ no sea suficiente para encontrar la salida del sistema para cualquier $x(t)$.
+    \end{ejercicio}
+    
+    \begin{ejercicio}
+    Para los siguientes sistemas de tiempo continuo
+    \begin{align*}
+        \inciso y(t) = x(t/3) & \hfill & \inciso y(t) = \int_{-\infty}^{t} x(\tau + 2) d\tau & \hfill & \inciso y(t) = 2x(t) + 1
+    \end{align*}
+    determinar si cada uno de ellos es lineal, invariante ante desplazamientos, estable, causal y si tiene memoria.
+    \end{ejercicio}
+    
+    \begin{ejercicio}
+    Para los siguientes sistemas de tiempo discreto
+    \begin{align*}
+        \inciso & y(n) = x(-n) & \hfill \inciso & y(n) = \begin{cases}
+        1 & \mbox{para $n = 0$} \\
+        \pi x(n) & \mbox{en otro caso}
+        \end{cases} \\[.5em]
+        \inciso & y(n) = n x(n) & \hfill \inciso & y(n) = \Realpart{x(n)}
+    \end{align*}
+    determinar si cada uno de ellos es lineal, invariante ante desplazamientos, estable, causal y si tiene memoria.
+    \end{ejercicio}
+    
+    \begin{ejercicio}
+    Determinar si los siguientes enunciados son verdaderos o falsos.
+    
+    \inciso La conexión en cascada de sistemas LTI resulta en un sistema total que también es LTI.
+    
+    \inciso La conexión en cascada de sistemas no lineales es un sistema no lineal.
+    
+    \inciso La conexión en cascada de sistemas no invariantes en el tiempo es un sistema no invariante en el tiempo.
+    
+    \inciso La conexión en cascada de sistemas causales con sistemas causales es siempre no causal.
+    
+    \inciso El orden de conexión de sistemas no invariantes en el tiempo no altera la salida para una misma entrada.
+    
+    \inciso En un sistema LTI si la entrada es periódica entonces la salida también lo es.
+    \end{ejercicio}
+    
+    \begin{ejercicio}
+    Dos sistemas LTI en tiempo discreto con respuesta al impulso $h_1(n)$ y $h_2(n)$ son conectados en cascada en ese orden. La entrada no se conoce pero la salida $y(n)$ es como se muestra en la siguiente figura:
+    \begin{center}
+        \input{02_sistemas/plots/2-6}
+    \end{center}
+    
+    \inciso Si los dos sistemas son causales, ¿qué se puede decir acerca del momento en que la entrada podría haber empezado? ¿Se puede establecer el momento exacto de comienzo?
+    
+    \inciso La entrada $x(n)$ que produjo la salida $y(n)$ anterior es aplicada a un nuevo par de sistemas conectados en cascada donde el primero tiene una respuesta impulsiva $h_a(n) = h_1(n + 1)$ y el segundo $h_b(n) = 2h_2(n)$. Graficar la salida.
+    \end{ejercicio}
+    
+    \begin{ejercicio}
+    Sobre un único sistema invariante en el tiempo se conocen los siguientes pares entrada-salida:
+    \begin{align*}
+        x_1(n) = \delta(n) + 2\delta(n-2) & \hspace{1em}\longrightarrow\hspace{1em} y_1(n) = \delta(n-1) + 2\delta(n-2) \\[.5em]
+        x_2(n) = 3 \delta(n-2) & \hspace{1em}\longrightarrow\hspace{1em} y_2(n) = \delta(n-1) + 2 \delta(n-3) \\[.5em]
+        x_3(n) = \delta(n-3) & \hspace{1em}\longrightarrow\hspace{1em} y_3(n) = \delta(n+1) + 2 \delta(n) + \delta(n-1)
+    \end{align*}
+    
+    \inciso ¿Se puede afirmar algo sobre la linearidad del sistema?
+    
+    \inciso ¿Es posible hallar la respuesta del sistema $y_4(n)$ cuando la entrada es $x_4(n)=\delta(n)$ con los datos disponibles? En tal caso, obtenerla.
+    
+    \inciso ¿Es posible hallar la respuesta del sistema $y_5(n)$ cuando la entrada es $x_5(n)=5\delta(n-2)$ con los datos disponibles? En tal caso, obtenerla.
+    \end{ejercicio}
+    
+    \begin{ejercicio}
+    Dado un sistema LTI en tiempo discreto con una respuesta al impulso $h(n) = \alpha^n u(n)$ con $\alpha<1$, encontrar la salida del sistema para cada una de las siguientes entradas:
+    
+    \inciso $x(n) = \delta(n) - \delta(n-1)$
+    
+    \inciso $x(n) = u(n) - u(n-5)$
+    \end{ejercicio}
+    
+    \begin{ejercicio}
+    Dado un sistema LTI en tiempo continuo, encontrar la salida del sistema cuando la entrada es $x(t) = u(t-1)\sin(t)$ si la respuesta al impulso es:
+    
+    \inciso $h(t) = u(n)$ 
+    
+    \inciso $h(t) = u(t) - 2u(t-2) + u(t-5)$
+    \end{ejercicio}
+    
+    \begin{ejercicio}
+    Calcular $x(n) * x(n)$ con $x(n)=u(n+3) - u(n-4)$.
+    \end{ejercicio}
+    
+    \begin{ejercicio}
+    Dado un sistema cuya respuesta impulsiva está dada por un pulso triangular $h(n)=\delta(n+2)+2\delta(n+1)+3\delta(t)+2\delta(t-1)+\delta(t-2)$ al cual se le aplica una entrada $x(n)$ que consiste en un tren de impulsos de período $N$, calcular y graficar la salida $y(n)$ para los siguientes casos:
+    \begin{align*}
+    \inciso N=6 & \hfill & \inciso N=4 & \hfill & \inciso N=2
+    \end{align*}
+    \end{ejercicio}
+    
+    \begin{ejercicio}
+    A un sistema cuya respuesta al impulso es $h(t) = u(t) - u(t - 1)$ se le aplica una entrada $x(t) = h(t/\alpha)$.
+    
+    \inciso Calcular la salida del sistema
+    
+    \inciso Si se sabe que la derivada de la salida tiene sólo 3 discontinuidades, obtener el valor de $\alpha$.
+    \end{ejercicio}
+    
+    \begin{ejercicio}
+    Dado un sistema en tiempo discreto definido por la ecuación en diferencias 
+    \begin{equation*}
+        y(n) = x(n) + \frac{3}{4} y(n-1)
+    \end{equation*}
+    con condiciones de contorno
+    \begin{align*}
+    \inciso & y(-1) = 0 & \inciso & y(1) = 0 & \inciso & y(0) = 0 \\[.5em]
+    \inciso & y(0) = 1 & \inciso & \lim_{n\rightarrow -\infty} y(n) = 0  & \inciso & \lim_{n\rightarrow +\infty} y(n) = 0
+    \end{align*}
+    se pide:
+    \begin{itemize}
+        \item Calcular el valor de la respuesta al impulso $h(n)$ del sistema en el intervalo $-5 \leq n \leq 5$
+        \item Obtener una expresión cerrada de $h(n)$ para todo $n \in \mathbb{Z}$.
+        \item Determinar si son lineales, invariante ante desplazamientos, estables y causales.
+    \end{itemize}
+    \end{ejercicio}
+    
+    \begin{ejercicio}
+    Ejercicio para calcular lo mismo que antes pero a partir de una impulso desplazado en -1 y en +1. REVISAR.
+    \end{ejercicio}
+    
+    \begin{ejercicio}
+    Demostrar que un sistema definido por ecuaciones en diferencias FIR siempre será lineal, invariante ante desplazamientos y estable. Determinar, además, qué condición debe cumplir un sistema de este tipo para ser causal.
+    \end{ejercicio}
+    
+    \begin{ejercicio}
+    Obtener la respuesta al impulso para el sistema definido por la ecuación diferencial 
+    \begin{equation*}
+        y(n) = x(n+1) + x(n) + x(n-1) + \frac{3}{4} y(n-1)
+    \end{equation*}
+    en condiciones inciales de reposo. \end{ejercicio}
+    
+    \begin{ejercicio}
+    Obtener la respuesta al impulso para el sistema definido por la ecuación diferencial 
+    \begin{equation*}
+        y(n) = x(n+1) + x(n) + x(n-1) + \frac{5}{4} y(n-1)
+    \end{equation*}
+    en condiciones finales de reposo. \end{ejercicio}
+    
+    \begin{ejercicio}
+    Implementar en \Keyboardsym una función que permita obtener la respuesta al impulso de una ecuación en diferencias para condiciones iniciales o finales de reposo.
+    \end{ejercicio}
+    
+    
+    

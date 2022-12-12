@@ -1,0 +1,31 @@
+\begin{tikzpicture}[scale=.8,transform shape]
+    \node[circle,radius=1cm,draw,thick] (x) at (0,0) {$\times$};
+    \node[above=1.5cm] (deltatrain) at (x) {$s(t) = \sum_{n=-\infty}^{\infty} \delta(t-nT)$};
+    \node[left=3cm] (x_t) at (x) {$x_c(t)$} ;
+    \node[above=5cm,right=.4cm] (x_p) at (x.north) {$x_s(t)$} ;
+    \node[right=1.5cm,rectangle,draw,thick,inner sep=0.2cm] (ad) at (x) {\parbox{2cm}{\tiny Conversor de tren de impulsos a secuencia en tiempo discreto}} ;
+    % \node[right=1.5cm,rectangle,draw,thick,inner sep=0.5cm] (ad) at (x) {$H(j\omega)$} ;
+    \node[yshift=.3cm,right=1.8cm] at (ad) {$x(n)$} ;
+    \node[right=3cm,rectangle,draw,thick,inner sep=0.5cm] (H_W) at (ad) {$H(e^{j\Omega})$} ; 
+    \node[yshift=.3cm,right=1.2cm] at (H_W) {$y(n)$} ;
+    
+    \node[right=3cm,rectangle,draw,thick,inner sep=0.2cm] (da) at (H_W) {\parbox{1.5cm}{\tiny Conversor a tren de impulsos}} ;
+    
+    \node[right=2.5cm,rectangle,draw,thick,inner sep=0.2cm] (bp) at (da) {\parbox{1.5cm}{\tiny Filtro de reconstrucción ideal $H_r(j\omega)$}} ;
+    
+    \node[yshift=.5cm,right=1.2cm] (y_s) at (da) {$y_s(t)$} ;
+    \node[right=2cm] (yr_t) at (bp) {$y_r(t)$} ;
+    \node[dashed,thick,rectangle,draw,minimum width=7cm,minimum height=4cm,yshift=.5cm] (ad_box) at (x_p) {} ;
+    \node[yshift=2.5cm] (ad_label) at (ad_box) {A/D} ;
+    
+    \node[dashed,thick,rectangle,draw,minimum width=6.5cm,minimum height=4cm,yshift=.4cm] (da_box) at (y_s) {} ;
+    \node[yshift=2.5cm] (da_label) at (da_box) {D/A} ;
+    
+    \draw[->,very thick] (deltatrain) -- (x) ;
+    \draw[->,very thick] (x_t) -- (x) ;
+    \draw[->,very thick] (x) -- (ad) ;
+    \draw[->,very thick] (ad) -- (H_W) ;
+    \draw[->,very thick] (H_W) -- (da) ;
+    \draw[->,very thick] (da) -- (bp) ;
+    \draw[->,very thick] (bp) -- (yr_t) ;
+    \end{tikzpicture}

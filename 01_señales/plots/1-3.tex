@@ -1,0 +1,18 @@
+\begin{tikzpicture}[scale=0.6,transform shape]
+    \begin{axis}[
+    	axis y line=center,
+    	axis x line=middle,
+    	xlabel=$t$,ylabel={\Large $x(t)$},
+    	xmin=-6,xmax=24,
+    	ymin=-0.3,ymax=1.9,
+    	xticklabel style = {xshift=5},
+    	yticklabel style = {yshift=5},
+    	]
+    	\addplot[
+    	black,
+    	ultra thick
+    	] coordinates {
+    	    (0,0) (0,1) (10,1) (20,0)
+    	};
+    \end{axis}
+\end{tikzpicture}

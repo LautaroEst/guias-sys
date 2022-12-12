@@ -1,0 +1,153 @@
+\myheader{Guía 1: Señales en el tiempo}
+
+\begin{ejercicio}
+Graficar las siguientes señales en el intervalo $-10 \leq n \leq 10$. Implementar en \Keyboardsym una función para graficar cualquiera de ellas.
+
+\inciso $-2\delta(n+2)$
+
+\inciso $2^n u(n)$
+
+\inciso $2^{-n} u(-n+2)$
+
+\inciso $\cos\left(\frac{\pi}{3} n \right) u(n-2)$
+
+\inciso $\sum_{k=-\infty}^{\infty} \delta(n-2k) - \delta(n-1-2k)$
+
+\inciso $u(n+2) - u(n+2-N)$ con $N=3,5,7$
+
+
+\end{ejercicio}
+
+\begin{ejercicio}
+Evaluar, si es posible, las siguientes sumas y expresar su respuesta en forma cartesiana y polar. Implementar una función en \Keyboardsym que obtenga la suma geométrica para cualquiera de ellas. 
+
+\begin{align*}
+\inciso & \sum_{n=0}^9 e^{j\frac{\pi}{2}n} &
+\inciso & \sum_{n=-2}^7 e^{j\frac{\pi}{2}n} & \inciso & \sum_{n=0}^9 \cos\left(\frac{\pi}{2}n\right) & \hfill \\[.5em]
+\inciso & \sum_{n=0}^9 \left(\frac{1}{2}\right)^n e^{j\frac{\pi}{2}n} & 
+\inciso & \sum_{n=0}^\infty a^n e^{j\frac{\pi}{2}n},\; |a| < 1 & 
+\inciso & \sum_{n=-4}^\infty \left(\frac{4}{3}\right)^n e^{j\frac{\pi}{2}n}
+\end{align*}
+\end{ejercicio}
+
+\begin{ejercicio}
+Sea $d_T(t)=t-T$ la función desplazamiento a derecha ($T>0$) y $e_a(t)=\frac{t}{a}$ la función expansión ($a > 1$). Para la señal $x(t)$
+
+\begin{center}
+    \input{01_señales/plots/1-3.tex}
+\end{center}
+
+graficar:
+
+\inciso $x(d_1(e_2(t)))$
+
+\inciso $x(e_2(d_1(t)))$
+
+\inciso $x\left(\frac{3}{2}t + 1\right)$
+
+\inciso $x\left(-2t -1\right)$
+
+\inciso $x\left(\frac{t}{2} - \frac{1}{2} \right)$
+
+\end{ejercicio}
+
+\begin{ejercicio}
+Sea la señal discreta $x(n)$
+\begin{center}
+    \input{01_señales/plots/1-4}
+\end{center}
+
+Graficar cada una de las siguientes señales. Implementar en \Keyboardsym una función que grafique cada una de ellas a partir de una $x(n)$ genérica.
+
+\inciso $x(n) u(2-n)$
+
+\inciso $x(n-1) \delta(n-3)$
+
+\inciso $x(n-1) \delta(n-3)$
+
+\inciso $\frac{1}{2}x(n) + \frac{1}{2}(-1)^n x(n)$
+
+\end{ejercicio}
+
+\begin{ejercicio}
+Graficar las partes par e impar de las siguientes señales. Implementar en \Keyboardsym una función que obtenga la parte par e impar de una señal cualquiera. 
+
+\begin{align*}
+\inciso \parbox{.3\textwidth}{\input{01_señales/plots/1-5a}} & \hfill & \inciso \parbox{.3\textwidth}{\input{01_señales/plots/1-5b}}
+\end{align*}
+\end{ejercicio}
+
+\begin{ejercicio}
+Sea $x(t)$ una señal de tiempo continuo, y sean $y_1(t) = x(2 t)$ y $y_2(t) = x(t / 2)$. Determinar si las siguientes afirmaciones son verdaderas o falsas y justificar con demostración o contraejemplo según corresponda. Obtener el período fundamental de $y_1(t)$ y $y_2(t)$.
+
+\inciso Si $x(t)$ es periódica, entonces $y_1(t)$ es periódica.
+
+\inciso Si $y_1(t)$ es periódica, entonces $x(t)$ es periódica.
+
+\inciso Si $x(t)$ es periódica, entonces $y_2(t)$ es periódica.
+
+\inciso Si $y_2(t)$ es periódica, entonces $x(t)$ es periódica.
+
+\end{ejercicio}
+
+\begin{ejercicio}
+Sea $x(n)$ una señal de tiempo discreta, y sean $y_1(n) = x(2 n)$ y 
+\begin{equation*}
+y_2(n) = \begin{cases}
+x(n/2) & \mbox{si $n$ es par} \\
+0 & \mbox{en otro caso}
+\end{cases}
+\end{equation*}
+Determinar si las siguientes afirmaciones son verdaderas o falsas y justificar con demostración o contraejemplo según corresponda. Obtener el período fundamental de $y_1(n)$ y $y_2(n)$.
+
+\inciso Si $x(n)$ es periódica, entonces $y_1(n)$ es periódica.
+
+\inciso Si $y_1(n)$ es periódica, entonces $x(n)$ es periódica.
+
+\inciso Si $x(n)$ es periódica, entonces $y_2(n)$ es periódica.
+
+\inciso Si $y_2(n)$ es periódica, entonces $x(n)$ es periódica.
+
+\end{ejercicio}
+
+\begin{ejercicio}
+Implementar en \Keyboardsym \emph{sin utilizar bucles} una función que, dada una señal $x(n)$ y un $N_0\in \mathbb{Z}$, obtenga $y_1(n)=x(N_0n)$ y 
+\begin{equation*}
+y_2(n) = \begin{cases}
+x(n/N_0) & \mbox{si $n$ es m\`{u}ltiplo de $N_0$ } \\
+0 & \mbox{en otro caso}
+\end{cases}
+\end{equation*}
+\end{ejercicio}
+
+\begin{ejercicio}
+Sea $x(t)=e^{j\omega_0t}$ la señal exponencial compleja en tiempo continuo con período fundamental $T_0=\frac{2\pi}{\omega_0}$. Considere la señal discreta obtenida al tomar muestras de $x(t)$ equiespaciadas:
+\begin{equation*}
+    x_d(n) = x(nT_s) = e^{j\omega_0t}\big|_{t=nT_s} = e^{j\omega_0nT_s}
+\end{equation*}
+
+\inciso Demostrar que $x_d(n)$ es periódica si y sólo si $\frac{T_0}{T_s}$ es un número racional.
+
+\inciso Determinar el período y la frecuencia fundamental de $x_d(n)$ cuando ésta es periódica. Expresar la frecuencia fundamental como una fracción de $T_0$.
+
+\inciso ¿Cuántos periodos de $T_0$ se necesitan para obtener las muestras que forman un solo período de $x_d(n)$ en el caso en que ésta última es periódica?
+\end{ejercicio}
+
+\begin{ejercicio}
+Indicar si las siguientes afirmaciones son verdaderas o falsas:
+
+\inciso La suma de dos señales senoidales de tiempo continuo de frecuencias $f_1$ y $f_2$ es siempre una señal periódica. 
+
+\inciso La suma de dos señales senoidales de tiempo discreto de frecuencias $f_1$ y $f_2$ es siempre una señal periódica. 
+
+\end{ejercicio}
+
+\begin{ejercicio}
+Graficar en \Keyboardsym las siguientes funciones y determinar si son periódicas o no:
+\begin{align*}
+    \inciso & \cos\left(\frac{2\pi}{12} n\right) & \inciso & \cos\left(\frac{8\pi}{31} n\right) \\ 
+    \inciso & \cos\left(\frac{1}{6} n\right) & \inciso & \parbox{.5\textwidth}{$x(n)$ definida como las muestras de una senoidal de frecuencia 10Hz muestreada con $T_s=\frac{1}{1000\mathrm{Hz}}$} \\
+    \inciso & x(n) = \sum_{k=0}^{50}\cos\left(\frac{\pi k}{32}n\right) & \inciso & x(n) = \sum_{k=0}^{50} \Realpart{a_ke^{\frac{\pi k}{32}n}}\; \mathrm{con}\; a_k = \frac{1}{\pi k} \sin\left(\frac{\pi}{4} k\right)  \\ 
+    \inciso & x(n) = \sum_{k=0}^{50}\cos\left(\frac{\pi f(k)}{2}n\right)\; \mathrm{con} & & \hspace{-2.5em} f(k) = 10 \tan\left(\frac{3\pi}{400} k\right)
+\end{align*}
+\end{ejercicio}

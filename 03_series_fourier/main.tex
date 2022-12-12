@@ -1,0 +1,132 @@
+\myheader{Guía 3: Series de Fourier}
+
+
+\begin{ejercicio}
+Sea $x(t)$ un tren de pulsos de período $T$ definido en el intervalo $[-\frac{T}{2},\frac{T}{2})$ como 
+\begin{equation*}
+    x(t) = \begin{cases}
+    1 & \mbox{si } t \in (-\frac{T_0}{2},\frac{T_0}{2}) \\
+    0 & \mbox{si } t \in [-\frac{T}{2},-\frac{T_0}{2}) \cup (\frac{T_0}{2},\frac{T}{2})
+    \end{cases}
+\end{equation*}
+\end{ejercicio}
+con $T > T_0 > 0$. 
+
+\inciso Obtenga los coeficientes $\left\{a_k\right\}_{k\in\mathbb{Z}}$ de la Serie de Fourier de tiempo continuo de $x(t)$ y escriba los 6 primeros términos de la serie.
+
+\inciso Grafique el espectro de aplitudes y de fase.
+
+\inciso Obtenga los coeficientes $\left\{b_k\right\}_{k\in\mathbb{Z}}$ de la Serie de Fourier de tiempo continuo de $x_1(t) = x(t-\frac{\pi}{6})$.
+
+\inciso Obtenga los coeficientes $\left\{c_k\right\}_{k\in\mathbb{Z}}$ de la Serie de Fourier de tiempo continuo de $x_2(t) = x(t)+1$.
+
+\inciso Obtenga los coeficientes $\left\{d_k\right\}_{k\in\mathbb{Z}}$ de la Serie de Fourier de tiempo continuo de $x_3(t) = \sum_{n=-\infty}^{\infty} (-1)^{n-1} \delta(t-(2n+1)\frac{T_0}{2})$.
+
+\begin{ejercicio}
+Utilizando las propiedades de la serie de Fourier de tiempo continuo, calcular los coeficientes $\left\{b_k\right\}_{k\in\mathbb{Z}}$ de la señal periódica $x(t)$:
+\begin{align*}
+    \inciso & \parbox{.4\textwidth}{\input{03_series_fourier/plots/3-2a}} & \hspace{\fill} 
+    \inciso & \parbox{.4\textwidth}{\input{03_series_fourier/plots/3-2b}} \\
+    \inciso & \parbox{.4\textwidth}{\input{03_series_fourier/plots/3-2c}} & \hspace{\fill} 
+    \inciso & \parbox{.4\textwidth}{\input{03_series_fourier/plots/3-2d}} \\
+    \inciso & \parbox{.4\textwidth}{\input{03_series_fourier/plots/3-2e}} & \hspace{\fill} 
+    \inciso & \parbox{.4\textwidth}{\input{03_series_fourier/plots/3-2f}} \\
+    \inciso & \parbox{.4\textwidth}{\input{03_series_fourier/plots/3-2g}} & \hspace{\fill} & \\
+\end{align*}
+\end{ejercicio}
+
+\begin{ejercicio}
+Calcular los coeficientes de la serie de Fourier de tiempo continuo de la señal $x(t)$ de período $T=3$ sabiendo que en el intervalo $[-1.5,1.5)$ se define como
+
+\inciso $x(t) = \cos(20\pi t)w_1(t)$ con \begin{equation*}
+    w_1(t) = \begin{cases}
+    1 & \mbox{si } t \in (-1,1) \\
+    0 & \mbox{si } t \in [-1.5,\,-1) \cup (1,1.5)
+    \end{cases}
+\end{equation*}
+
+\inciso $x(t) = \cos(20\pi t)w_2(t)$ con \begin{equation*}
+    w_2(t) = \begin{cases}
+    1 & \mbox{si } t \in (-1.5,-1) \\
+    0 & \mbox{si } t \in [-1,0) \\
+    2 & \mbox{si } t \in (0,1) \\
+    1 & \mbox{si } t \in (1,1.5) \\
+    \end{cases}
+\end{equation*}
+
+\inciso $x(t) = \cos(20\pi t)w_3(t)$ con \begin{equation*}
+    w_3(t) = \begin{cases}
+    e^{-|t|} & \mbox{si } t \in (-1,1) \\
+    0 & \mbox{si } t \in [-1.5,-1) \cup (1,1.5)
+    \end{cases}
+\end{equation*}
+\end{ejercicio}
+
+
+\begin{ejercicio}
+Utilizando las propiedades de la serie de Fourier de tiempo discreto, calcular los coeficientes $\left\{a_k\right\}_{k=0}^{N}$ de la señal periódica $x(n)$:
+\begin{align*}
+    \inciso & \parbox{.4\textwidth}{\input{03_series_fourier/plots/3-dtft_a}} & \hspace{\fill} 
+    \inciso & \parbox{.4\textwidth}{\input{03_series_fourier/plots/3-dtft_b}} \\
+    \inciso & \parbox{.4\textwidth}{\input{03_series_fourier/plots/3-dtft_c}} & \hspace{\fill} 
+    \inciso & x(n) = \sin(2\pi n / 3) \cos(\pi n/2)
+\end{align*}
+
+\noindent \hspace*{0.6em} \inciso $x(n)$ periódica con período 4, siendo $x(n) = 1-\sin(\pi n/4)$ para $0 \leq n \leq 3$ 
+
+\noindent \hspace*{0.6em} \inciso $x(n)$ periódica con período 12, siendo $x(n) = 1-\sin(\pi n/4)$ para $0 \leq n \leq 11$
+\end{ejercicio}
+
+\begin{ejercicio}
+Sea $x(n)$ una señal periódica de período $N$, hallar:
+\begin{align*}
+    & \inciso x(n-n_0),\; n_0 \in\mathbb{Z} & \hfill & \inciso x(n) - x(n-1) & \hfill & \inciso x(n) - x\left(n-\frac{N}{2}\right),\; \mbox{$N$ par} \\
+    & \inciso x(n) + x\left(n-\frac{N}{2}\right),\; \mbox{$N$ par} & \hfill & \inciso x^*(-n) & \hfill & \inciso (-1)^n x(n),\; \mbox{$N$ par} \\ & \inciso (-1)^n x(n),\; \mbox{$N$ impar}
+    & \hfill & \inciso y(n) = \begin{cases} x(n) & \mbox{si $n$ es par} \\ 0 & \mbox{en otro caso}
+    \end{cases}
+\end{align*}
+\end{ejercicio}
+
+\begin{ejercicio}
+Sea un sistema LTI de tiempo continuo con respuesta al impulso $h(t) = e^{-4|t|}$. Hallar la salida $y(t)$ del sistema para las siguientes entradas:
+
+\inciso $x(t)=e^{j\omega_0 t}$ con $\omega_0\in\mathbb{R}$ ¿Es $x(t)$ una autofunción del sistema?
+
+\inciso $x(t)=e^{j\omega_0 t}u(t)$ con $\omega_0\in\mathbb{R}$. ¿Es $x(t)$ una autofunción del sistema?
+
+\inciso $x(t)=\sum_{k=-\infty}^{\infty} (-1)^k \delta(t-k)$
+
+\inciso $x(t)$ de período 1 tal que $x(t) = \begin{cases} 1 & \mbox{si $-1/4 \leq t < 1/4$} \\ 0 & \mbox{en otro caso} \end{cases}$ \hspace{1em} para $-1/2\leq t < 1/2$.
+\end{ejercicio}
+
+\begin{ejercicio}
+Para cada uno de los siguientes pares de señales $x(n)$ e $y(n)$, determinar si existe un sistema LTI discreto cuya salida $y(n)$ pueda corresponder efectivamente a la entrada $x(n)$. En el caso de que exista, determinar si es único y qué codiciones debe cumplir la respuesta al impulso.
+
+\inciso $x(n) = \left(\frac{1}{2}\right)^n$ e $y(n) = \left(\frac{1}{4}\right)^n$
+
+\inciso $x(n)=e^{jn/8}$ e $y(n) = e^{j2n/8}$
+
+\inciso $x(n)= e^{j\pi n/3}$ e $y(n) = \cos(\pi n/3)$
+
+\inciso $x(n) = \cos(\pi n/3)$ e $y(n) = \cos(\pi n/3) + \sqrt{3} \sin(\pi n/3)$
+\end{ejercicio}
+
+\begin{ejercicio}
+Decidir si existe un sistema LTI discreto que cumpla con que si $x(n)$ es la entrada, entonces $y(n)$ es una salida posible.
+\begin{align*}
+    \inciso & \parbox{.4\textwidth}{
+        \input{03_series_fourier/plots/3-eigenfunction_a}
+    } 
+    & \hspace{\fill} 
+    & \parbox{.4\textwidth}{
+        \input{03_series_fourier/plots/3-eigenfunction_aa}
+    } \\
+    \inciso & \parbox{.4\textwidth}{
+        \input{03_series_fourier/plots/3-eigenfunction_b}
+    } & \hspace{\fill} 
+    & \parbox{.4\textwidth}{
+        \input{03_series_fourier/plots/3-eigenfunction_bb}
+    }
+\end{align*}
+En caso de que se cumpla, decidir si es posible asegurar que todos los sistemas que cumplan con esta condición son realmente LTI.
+\end{ejercicio}

@@ -1,0 +1,21 @@
+\pgfmathdeclarefunction{gauss}{3}{%
+  \pgfmathparse{exp(-((#1-#2)^2)/(2*#3^2))}%
+}
+
+\begin{tikzpicture}[scale=0.6,transform shape]
+    \begin{axis}[
+        x=0.04\textwidth,y=0.2\textwidth,
+    	axis y line=center,
+    	axis x line=middle,
+    	xlabel=$t$,ylabel={\Large $x(t)=e^{-t^2/2}$},
+    	xmin=-4.9,xmax=4.9,
+    	ymin=-.3,ymax=1.3,
+    	xticklabel style = {xshift=5},
+    	yticklabel style = {yshift=5},
+    	]
+    	\addplot [
+    	black, ultra thick,
+    	domain=-10:10, smooth, samples=100
+    	] {gauss(x,0,1)} ;
+    \end{axis}
+\end{tikzpicture}

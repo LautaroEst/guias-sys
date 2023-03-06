@@ -65,6 +65,12 @@
     \vspace{0.2cm}
     \refstepcounter{incisoi} \noindent (\textbf{\alph{incisoi}})~
 }
+\newcounter{subincisoi}[incisoi]
+\newcommand{\subinciso}{
+    \vspace{0.2cm}
+    \refstepcounter{subincisoi} \noindent (\textbf{\roman{subincisoi}})~
+}
+
 
 % Title 
 \newcommand{\myheader}[1]{
@@ -80,6 +86,11 @@
 \newcommand{\unidadtem}{0}
 
 \begin{document}
+
+% Short-cuts
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\Z}{\mathbb{Z}}
+
 
 \ifcase%
     \unidadtem{} {

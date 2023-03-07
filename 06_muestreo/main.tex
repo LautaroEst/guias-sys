@@ -1,20 +1,20 @@
-\myheader{Guía 5: Muestreo e Interpolación}
+\myheader{Guía 6: Muestreo e Interpolación}
 
 
 \begin{ejercicio}
     A continuación se muestra el sistema global para filtrar una señal en tiempo continuo utilizando un filtro en tiempo discreto.
     \begin{center}
-        \input{05_muestreo/plots/5-ad_da}
+        \input{06_muestreo/plots/5-ad_da}
     \end{center}
     Asumiendo que $H(e^{j\Omega})$ y $H_r(j\omega)$ tienen la forma
     \begin{center}
-        \input{05_muestreo/plots/5-ad_da_1}
+        \input{06_muestreo/plots/5-ad_da_1}
     \end{center}
     se pide:
     
     \inciso Para el caso en que $\frac{1}{T}=20\;\mathrm{kHz}$ y la transformada $X_c(j\omega)$ de $x_c(t)$ es
     \begin{center}
-        \input{05_muestreo/plots/5-ad_da_2}
+        \input{06_muestreo/plots/5-ad_da_2}
     \end{center}
     con $f_M=10\;\mathrm{kHz}$ graficar las transformadas $X_s(j\omega)$ y $X(e^{j\Omega})$ de $x_s(t)$ y $x(n)$ respectivamente.
     
@@ -31,18 +31,18 @@
     \begin{ejercicio}
     Dado el siguiente sistema de muestreo
     \begin{center}
-    \input{05_muestreo/plots/5-2}
+    \input{06_muestreo/plots/5-2}
     \end{center}
     y considerando que $\omega_1 > \omega_2-\omega_1$, encontrar el máximo valor de $T$ y los valores de las constantes $A$, $\omega_a$, $\omega_b$ tales que $x(t)=x_r(t)$ cuando la señal $x(t)$ tiene un espectro como se muetra a continuación
     \begin{center}
-    \input{05_muestreo/plots/5-2bis}
+    \input{06_muestreo/plots/5-2bis}
     \end{center}
     \end{ejercicio}
     
     \begin{ejercicio}
     Sea el sistema de muestreo como se muestra a continuación:
     \begin{center}
-    \input{05_muestreo/plots/5-3}
+    \input{06_muestreo/plots/5-3}
     \end{center}
     Para $x(t)=\cos\left(\frac{2\pi}{T}t\right)$ encontrar el intervalo de valores de $\Delta$ de manera que $y(t)$ sea proporcional a $x(at)$ para algún $a\in(0,1)$. Determinar el valor de $a$ en términos de $T$ y de $\Delta$.
     \end{ejercicio}
@@ -50,11 +50,11 @@
     \begin{ejercicio}
     Sea el siguiente sistema de muestreo
     \begin{center}
-    \input{05_muestreo/plots/5-4}
+    \input{06_muestreo/plots/5-4}
     \end{center}
     Dada una señal $x(t)$ cuya transformada de Fourier es como se muestra a continuación:
     \begin{center}
-    \input{05_muestreo/plots/5-4bis}
+    \input{06_muestreo/plots/5-4bis}
     \end{center}
     se pide:
     
@@ -71,7 +71,7 @@
     \begin{ejercicio}
     En la siguiente figura se muestra un sistema en el cual la señal de entrada es multiplicada por una onda cuadrada periódica $s(t)$ de período $T$. 
     \begin{center}
-    \input{05_muestreo/plots/5-5}
+    \input{06_muestreo/plots/5-5}
     \end{center}
     Suponiendo que la entrada es de banda limitada ($X(j\omega)=0\; \forall \omega>\omega_M$
     
@@ -99,7 +99,7 @@
     \begin{ejercicio}
     Dados los siguientes sistemas en cascada
     \begin{center}
-        \input{05_muestreo/plots/5-up_down_eq}
+        \input{06_muestreo/plots/5-up_down_eq}
     \end{center}
     determinar la respuesta en frecuencia del sistema equivalente $H_{eff}(e^{j\Omega})$.
     \end{ejercicio}
@@ -113,7 +113,7 @@
     
     \inciso Determinar si es posible obtener un sistema $H(e^{j\Omega})$ de manera que si se implementa en la siguiente estructura en cascada
     \begin{center}
-        \input{05_muestreo/plots/5-up2_down2}
+        \input{06_muestreo/plots/5-up2_down2}
     \end{center}
     es posible obtener $y(n)$ a partir de $x(n)$.
     

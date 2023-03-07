@@ -41,8 +41,8 @@
     \begin{ejercicio}
     Hallar, utilizando propiedades, la antitransformada de Fourier de las siguientes funciones:
     \begin{align*}
-        \inciso & X(\omega) = \cos(4\omega + \pi/3) \\
-        \inciso & X(\omega) = \frac{2\sin(3 (\omega-2\pi))}{\omega - 2\pi} \\
+        \inciso & X(\omega) = \cos(4\omega + \pi/3) 
+        \hspace*{10em} \inciso \hspace*{0.1em} X(\omega) = \frac{2\sin(3 (\omega-2\pi))}{\omega - 2\pi} \\
         \inciso & 
         X(\omega) \; \mathrm{tal\, que} \; |X(\omega)| = \begin{cases}
             |\omega| & \mbox{si } \omega \in [-1, 1) \\ 
@@ -68,18 +68,15 @@
     
     \begin{ejercicio}
     Sea $x(t) = e^{-t} (u(t) - u(t-1))$. Graficar las siguientes funciones y hallar la transformada de Fourier de todas ellas:
+    \begin{align*}
+        \inciso & x_1 = x(-t) + x(t) & 
+        \inciso & x_2 = -x(-t) + x(t) &
+        \inciso & x_3 = x(t+1) + x(t) &
+        \inciso & x_4 = t x(t)
+    \end{align*}
+\end{ejercicio}
     
-    \inciso $x_1 = x(-t) + x(t) \hspace*{20em}$
-    
-    \inciso $x_2 = -x(-t) + x(t)$
-    
-    \inciso $x_3 = x(t+1) + x(t)$
-    
-    \inciso $x_4 = t x(t)$
-    
-    \end{ejercicio}
-    
-    \begin{ejercicio}
+\begin{ejercicio}
     Para cada una de las siguientes funciones
     \begin{align*}
         \inciso & \parbox{.5\textwidth}{\input{04_transformada_fourier/plots/4-6a}} & \hspace{\fill} &
@@ -90,34 +87,27 @@
         \inciso & \parbox{.3\textwidth}{\input{04_transformada_fourier/plots/4-6f}} \\
     \end{align*}
     indicar si cumplen algunas de estas condiciones:
-    \begin{itemize}
-        \item $\Realpart{X(\omega)} = 0$
-        \item $\Impart{X(\omega)} = 0$
-        \item $\exists \alpha \in \mathbb{R}$ tal que $e^{j\omega\alpha}X(\omega)$ es una función real
-        \item $\int_{-\infty}^{\infty} X(\omega) d\omega = 0$
-        \item $\int_{-\infty}^{\infty} \omega X(\omega) d\omega = 0$
-        \item $X(\omega)$ es periódica
-    \end{itemize}
+    \begin{align*}
+        \subinciso & \Realpart{X(\omega)} = 0 &
+        \subinciso & \Impart{X(\omega)} = 0 &
+        \subinciso & \exists \alpha \in \mathbb{R} \; \mbox{tal que } e^{j\omega\alpha}X(\omega)\; \mbox{es una función real} \\
+        \subinciso & \int_{-\infty}^{\infty} X(\omega) d\omega = 0 &
+        \subinciso & \int_{-\infty}^{\infty} \omega X(\omega) d\omega = 0 &
+        \subinciso & X(\omega)\; \mbox{es periódica}
+    \end{align*}
+\end{ejercicio}
     
-    \end{ejercicio}
-    
-    \begin{ejercicio}
+\begin{ejercicio}
     Hallar y graficar la transformada de Fourier de tiempo discreto de las siguientes secuencias:
-    
-    \inciso $x(n) = u(n) - u(n-20)$
-    
-    \inciso $x(n) = \delta(n) - \delta(n-1)$
-    
-    \inciso $x(n) = \left( \frac{1}{2} \right)^{-n} u(-n-1)$
-    
-    \inciso $x(n) = \sin\left(\frac{\pi}{2} n \right) + \cos(n)$
-    \end{ejercicio}
-    
-    \begin{ejercicio}
-    Segunda parte del ejercicio 6a de la guía vieja. No entiendo qué hay que hacer.
-    \end{ejercicio}
-    
-    \begin{ejercicio}
+    \begin{align*}
+        \inciso & x(n) = u(n) - u(n-20) &
+        \inciso & x(n) = \delta(n) - \delta(n-1) \\
+        \inciso & x(n) = \left( \frac{1}{2} \right)^{-n} u(-n-1) &
+        \inciso & x(n) = \sin\left(\frac{\pi}{2} n \right) + \cos(n) 
+    \end{align*}
+\end{ejercicio}
+        
+\begin{ejercicio}
     Hallar la antitransformada de Fourier en tiempo discreto de las siguientes funciones:
     
     \inciso $X(e^{j\Omega}) = 1 + 3e^{-j2\Omega} - 4e^{-j10\Omega}$
@@ -139,10 +129,10 @@
     \inciso & X(0) & \inciso & \angle X(e^{j\Omega}) & \inciso & \int_{-\pi}^{\pi} X(e^{j\Omega}) d\Omega \\ 
     \inciso & X(e^{j\pi}) & \inciso & \int_{-\pi}^{\pi}  \left|\frac{X(e^{j\Omega})}{d\Omega}\right|^2 d\Omega &
     \end{align*}
-    \end{ejercicio}
+\end{ejercicio}
     
     
-    \begin{ejercicio}
+\begin{ejercicio}
     Para cada una de las siguientes funciones
     \begin{align*}
         \inciso & \parbox{.3\textwidth}{\input{04_transformada_fourier/plots/4-11a}} &
@@ -151,42 +141,60 @@
         \inciso & \parbox{.4\textwidth}{\input{04_transformada_fourier/plots/4-11d}} 
     \end{align*}
     indicar si cumplen algunas de estas condiciones:
-    \begin{itemize}
-        \item $\Realpart{X(e^{j\Omega})} = 0$
-        \item $\Impart{X(e^{j\Omega})} = 0$
-        \item $\exists \alpha \in \mathbb{R}$ tal que $e^{j\Omega\alpha}X(e^{j\Omega})$ es una función real
-        \item $\int_{-\pi}^{\pi} X(e^{j\Omega}) d\Omega = 0$
-        \item $X(e^{j\Omega})$ es periódica
-        \item $X(e^{j\Omega})|_{\Omega=0} = 0$
-    \end{itemize}
-    \end{ejercicio}
+    \begin{align*}
+        \subinciso & \Realpart{X(e^{j\Omega})} = 0 &
+        \subinciso & \Impart{X(e^{j\Omega})} = 0 &
+        \subinciso & \exists \alpha \in \mathbb{R}\; \mbox{tal que } e^{j\Omega\alpha}X(e^{j\Omega})\; \mbox{es una función real} \\
+        \subinciso & \int_{-\pi}^{\pi} X(e^{j\Omega}) d\Omega = 0 &
+        \subinciso & X(e^{j\Omega})\; \mbox{es periódica} &
+        \subinciso & X(e^{j\Omega})|_{\Omega=0} = 0
+    \end{align*}
+\end{ejercicio}
+
+\begin{ejercicio}
+    Sea un sistema LTI discreto cuya respuesta al impulso es $h(n) = \left(\frac{1}{2}\right)^n u(n)$. Usando la transformada de Fourier de tiempo discreto hallar la salida $y(n)$ del sistema para las siguientes entradas:
+    \begin{align*}
+        \inciso & x(n) = \left(\frac{3}{4}\right)^n u(n) &
+        \inciso & x(n) = (-1)^n u(n) \\
+        \inciso & x(n) = A e^{j\frac{\pi}{2}n}, \; \mbox{con } A \in \mathbb{R} &
+        \inciso & x(n) = 10 - 5 \sin\left(\frac{\pi}{2}n\right) + 20 \cos\left(\frac\pi n\right)
+    \end{align*}
+\end{ejercicio}
+
+\begin{ejercicio}
+    Utilizando la transformada de Fourier, decidir si existe un sistema LTI que cumpla con que, si $x(n)$ es la entrada, entonces $y(n)$ es la salida:
     
-    \begin{ejercicio}
-    Considere un sistema LTI discreto cuya respuesta al impulso es $h(n) = \left(\frac{1}{2}\right)^n u(n)$. Usando la transformada de Fourier de tiempo discreto hallar la salida $y(n)$ para las siguientes entradas:
-    
-    \inciso $x(n) = \left(\frac{3}{4}\right)^n u(n)$
-    
-    \inciso $x(n) = \left(-1\right)^n u(n)$
-    
-    \inciso $x(n) = A e^{j\frac{\pi}{2}n},\; -\infty < n < \infty$
-    
-    \inciso $x(n) = 10 - 5 \sin\left(\frac{\pi}{2} n\right) + 20 \cos(\pi n),\; -\infty < n < \infty$
-    
-    \end{ejercicio}
-    
-    \begin{ejercicio}
-    Para el sistema descripto por la ecuación en diferencias $y(n) = \frac{1}{2} y(n-1) + x(n)$ con condiciones iniciales de reposo, se pide:
-    
-    \inciso Encontrar la expresión analítica de la salida $y(n)$ ante una entrada $x(n)$ aplicada a partir de $n = 0$.
-    
-    \inciso Encontrar a partir de la expresión anterior la salida que corresponde cuando la entrada es $x(n) = \delta(n)$. 
-    
-    \inciso Encontrar a partir de la expresión general de la salida del sistema, la salida que corresponde
-    cuando la entrada es $x(n) = A e^{j\frac{\pi}{2}n}, n \geq 0$. A partir de esta expresión, y
-    comparándola con la obtenida en el ejercicio anterior (c) discuta el significado de la respuesta permanente y de la transitoria. Grafique ambos tipos de respuesta mediante MATLAB. Discuta qué función de MATLAB utilizaría para obtener la respuesta del sistema, \texttt{conv} o \texttt{filter}.
-    
-    \end{ejercicio}
-    
-    \begin{ejercicio}
-    Este ejercicio pide transformar las funciones del ejercicio 7a (guía vieja) y volver a hacerlo de vuelta. Hay que reformularlo de manera más imaginativa. 
-    \end{ejercicio}
+    \inciso $x(n)= e^{j\pi n/3}$ e $y(n) = \cos(\pi n/3)$
+
+    \inciso $x(n) = \cos(\pi n/3)$ e $y(n) = \cos(\pi n/3) + \sqrt{3} \sin(\pi n/3)$
+\end{ejercicio}
+
+\begin{ejercicio}
+    Sea la señal $x(t)$ cuya transformada de Fourier es $X(j\omega) = u(\omega - W_1) - u(\omega - W_2)$, con $W_1 < W_2$ y sea 
+    \begin{equation*}
+        y(t) = \frac{dx(t)}{dt} * x(t) + x(t)
+    \end{equation*}
+    Obtener $\int_{-\infty}^{\infty} |y(t-\alpha)|^2 dt$ donde $\alpha \in \R$.
+\end{ejercicio}
+
+\begin{ejercicio}
+    Sea el siguiente sistema, donde $h_{pb}(n)$ es LTI:
+    \begin{center}
+    \parbox{.7\textwidth}{\input{04_transformada_fourier/plots/4-pbandas_modulador.tex}}
+    \end{center}
+
+    \inciso Determinar la respuesta al impulso del sistema.
+
+    \inciso Demostrar que el sistema es lineal.
+
+    \inciso Demostrar que el sistema es invariante en el tiempo. \emph{Ayuda:} $\cos(a)\cos(b) + \sin(a)\sin(b) = \cos(a-b)$.
+
+    \inciso Si $\Omega_0 = \frac{\pi}{2}$ y el sistema $h_{pb}(n)$ es un filtro pasabajos ideal con frecuencia de corte $\Omega_c = \frac{\pi}{4}$, determinar la respuesta en frecuencia del sistema.
+\end{ejercicio}
+
+\begin{ejercicio}
+    Obtener la respuesta en frecuencia del siguiente sistema y compararlo con la del ejercicio anterior:
+    \begin{center}
+    \parbox{.7\textwidth}{\input{04_transformada_fourier/plots/4-pbandas_modulador2.tex}}
+    \end{center}
+\end{ejercicio}

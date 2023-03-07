@@ -1,5 +1,23 @@
 \myheader{Guía 3: Series de Fourier}
 
+\begin{ejercicio}
+    Obtener la representación en serie de Fourier de tiempo continuo de las siguientes señales de tiempo continuo y determinar su período fundamental:
+    \begin{align*}
+        \inciso & 1 + e^{j\frac{\pi}{4}t} + 4e^{-j\frac{2\pi}{5}t} + e^{j\frac{4\pi}{5}t} &
+        \inciso & 2 + \cos\left(\frac{2\pi}{3}t\right) + 3\sin\left(\frac{5\pi}{3}t\right)
+    \end{align*}
+\end{ejercicio}
+
+\begin{ejercicio}
+    Una señal periódica $x(t)$ real de tiempo continuo tiene período $T=8$ y sus coeficientes de la serie de Fourier no nulos son:
+    \begin{equation*}
+        a_1 = a_{-1} = 2, a_3 = { }^* a_{-3} = 4j
+    \end{equation*}
+    Hallar $A_k, \phi_k$ con $k\in \Z$ de manera que el desarrollo en serie de Fourier de $x(t)$ puede ser expresado como
+    \begin{equation*}
+        x(t) = \sum_{k=0}^{\infty} A_k \cos\left(\frac{2\pi}{T}t + \phi_k\right)
+    \end{equation*}
+\end{ejercicio}
 
 \begin{ejercicio}
 Sea $x(t)$ un tren de pulsos de período $T$ definido en el intervalo $[-\frac{T}{2},\frac{T}{2})$ como 
@@ -12,18 +30,18 @@ Sea $x(t)$ un tren de pulsos de período $T$ definido en el intervalo $[-\frac{T
 \end{ejercicio}
 con $T > T_0 > 0$. 
 
-\inciso Obtenga los coeficientes $\left\{a_k\right\}_{k\in\mathbb{Z}}$ de la Serie de Fourier de tiempo continuo de $x(t)$ y escriba los 6 primeros términos de la serie.
+\inciso Calcular utilizando la ecuación de síntesis los coeficientes $\left\{a_k\right\}_{k\in\mathbb{Z}}$ de la Serie de Fourier de tiempo continuo de $x(t)$ y escriba los 6 primeros términos de la serie.
 
-\inciso Grafique el espectro de aplitudes y de fase.
+\inciso Graficar el espectro de amplitudes y de fase.
 
-\inciso Obtenga los coeficientes $\left\{b_k\right\}_{k\in\mathbb{Z}}$ de la Serie de Fourier de tiempo continuo de $x_1(t) = x(t-\frac{\pi}{6})$.
+\inciso Obtener los coeficientes $\left\{b_k\right\}_{k\in\mathbb{Z}}$ de la Serie de Fourier de tiempo continuo de $x_1(t) = x(t-\frac{\pi}{6})$.
 
-\inciso Obtenga los coeficientes $\left\{c_k\right\}_{k\in\mathbb{Z}}$ de la Serie de Fourier de tiempo continuo de $x_2(t) = x(t)+1$.
+\inciso Obtener los coeficientes $\left\{c_k\right\}_{k\in\mathbb{Z}}$ de la Serie de Fourier de tiempo continuo de $x_2(t) = x(t)+1$.
 
-\inciso Obtenga los coeficientes $\left\{d_k\right\}_{k\in\mathbb{Z}}$ de la Serie de Fourier de tiempo continuo de $x_3(t) = \sum_{n=-\infty}^{\infty} (-1)^{n-1} \delta(t-(2n+1)\frac{T_0}{2})$.
+\inciso Calcular utilizando la ecuación de síntesis la representación en serie de Fourier de un tren de impulsos de período $T$ y obtener los coeficientes $\left\{a_k\right\}_{k\in\mathbb{Z}}$ de la Serie de Fourier de tiempo continuo de $x(t)$ a partir de la combinación de dos trenes de impulsos de período $T$ desplazados.
 
 \begin{ejercicio}
-Utilizando las propiedades de la serie de Fourier de tiempo continuo, calcular los coeficientes $\left\{b_k\right\}_{k\in\mathbb{Z}}$ de la señal periódica $x(t)$:
+Utilizando las propiedades de la serie de Fourier de tiempo continuo, calcular los coeficientes $\left\{a_k\right\}_{k\in\mathbb{Z}}$ de la señal periódica $x(t)$. 
 \begin{align*}
     \inciso & \parbox{.4\textwidth}{\input{03_series_fourier/plots/3-2a}} & \hspace{\fill} 
     \inciso & \parbox{.4\textwidth}{\input{03_series_fourier/plots/3-2b}} \\
@@ -64,6 +82,24 @@ Calcular los coeficientes de la serie de Fourier de tiempo continuo de la señal
 
 
 \begin{ejercicio}
+    Obtener dos señales de tiempo continuo que satisfagan simultáneamente las siguientes condiciones:
+    \begin{enumerate}
+        \item $x(t)$ es real e impar.
+        \item $x(t)$ es periódica con período $T=2$.
+        \item Los coeficientes de Fourier de $x(t)$ son $\{a_k\}_{k \in \Z}$ con $a_k = 0, |k| > 1$.
+        \item $\frac{1}{2} \int_{0}^{2} |x(t)|^2 \, dt = 1$.
+    \end{enumerate}
+\end{ejercicio}
+
+\begin{ejercicio}
+    Sea $x(n)$ una señal discreta real e impar de período $N=7$ y coeficientes de Fourier $\{a_k\}_{k \in \Z}$. Dado que se sabe que:
+    \begin{equation*}
+        a_{15} = j, a_{16} = 2j, a_{17} = 3j
+    \end{equation*}
+    determinar los valores de $a_0,a_{-1},a_{-2}$ y $a_{-3}$.
+\end{ejercicio}
+
+\begin{ejercicio}
 Utilizando las propiedades de la serie de Fourier de tiempo discreto, calcular los coeficientes $\left\{a_k\right\}_{k=0}^{N}$ de la señal periódica $x(n)$:
 \begin{align*}
     \inciso & \parbox{.4\textwidth}{\input{03_series_fourier/plots/3-dtft_a}} & \hspace{\fill} 
@@ -78,7 +114,7 @@ Utilizando las propiedades de la serie de Fourier de tiempo discreto, calcular l
 \end{ejercicio}
 
 \begin{ejercicio}
-Sea $x(n)$ una señal periódica de período $N$, hallar:
+Sea $x(n)$ una señal periódica de período $N$, con sus coeficientes de serie de Fourier $\{a_k\}_{k\in \Z}$. Hallar los coeficientes de las siguientes señales periódicas de período $N$:
 \begin{align*}
     & \inciso x(n-n_0),\; n_0 \in\mathbb{Z} & \hfill & \inciso x(n) - x(n-1) & \hfill & \inciso x(n) - x\left(n-\frac{N}{2}\right),\; \mbox{$N$ par} \\
     & \inciso x(n) + x\left(n-\frac{N}{2}\right),\; \mbox{$N$ par} & \hfill & \inciso x^*(-n) & \hfill & \inciso (-1)^n x(n),\; \mbox{$N$ par} \\ & \inciso (-1)^n x(n),\; \mbox{$N$ impar}
@@ -97,6 +133,17 @@ Sea un sistema LTI de tiempo continuo con respuesta al impulso $h(t) = e^{-4|t|}
 \inciso $x(t)=\sum_{k=-\infty}^{\infty} (-1)^k \delta(t-k)$
 
 \inciso $x(t)$ de período 1 tal que $x(t) = \begin{cases} 1 & \mbox{si $-1/4 \leq t < 1/4$} \\ 0 & \mbox{en otro caso} \end{cases}$ \hspace{1em} para $-1/2\leq t < 1/2$.
+\end{ejercicio}
+
+\begin{ejercicio}
+    Sea el sistema LTI de tiempo discreto cuya respuesta en frecuencia es:
+    \begin{equation*}
+        H(e^{j\omega}) = \begin{cases}
+            1 & \mbox{si $|\omega| \leq \frac{\pi}{8}$} \\
+            0 & \mbox{si } \frac{\pi}{8} < |\omega| \leq \pi \\
+        \end{cases}
+    \end{equation*}
+    Mostrar que si la entrada $x(n)$ al sistema tiene período $N=3$, entonces la salida $y(n)$ tiene un único valor no nulo por período. 
 \end{ejercicio}
 
 \begin{ejercicio}
@@ -129,4 +176,35 @@ Decidir si existe un sistema LTI discreto que cumpla con que si $x(n)$ es la ent
     }
 \end{align*}
 En caso de que se cumpla, decidir si es posible asegurar que todos los sistemas que cumplan con esta condición son realmente LTI.
+\end{ejercicio}
+
+\begin{ejercicio}
+    Cuando un tren de impulsos
+    \begin{equation*}
+        x(n) = \sum_{k=-\infty}^{\infty} \delta(n-4k)
+    \end{equation*}
+    pasa por un sistema LTI con una respuesta en frecuencia $H\left(e^{j\omega}\right)$, la salida es
+    \begin{equation*}
+        y(n) = \cos\left(\frac{5\pi}{2}n + \frac{\pi}{4}\right)
+    \end{equation*}
+    Determinar el valor de $H\left(e^{j\frac{k\pi}{2}}\right)$ para $k=0,1,2,3$.
+\end{ejercicio}
+
+\begin{ejercicio}
+    Sea un sistema LTI de tiempo discreto cuya respuesta al impulso vale 
+    \begin{equation*}
+        h(n) = \frac{\sin\left(\frac{3\pi n}{10}\right)}{\sin\left(\frac{\pi n}{10}\right)},\; n = 0,\ldots, 9
+    \end{equation*}
+    y cero en otro caso.
+
+    \inciso Se considera la entrada al sistema que vale
+    \begin{equation*}
+        x_1(n) = \frac{\sin\left(\frac{7\pi n}{10}\right)}{\sin\left(\frac{\pi n}{10}\right)}, \; n = 0,\ldots, 9
+    \end{equation*}
+    y cero en otro caso. A su vez, se considera la señal $\tilde{y}(n)$ que corresponde a la periodización (con período 10) de la salida $y(n)$ a la entrada $x_1(n)$. Determinar $\tilde{y}(n)$.
+
+    \inciso Determinar la salida del sistema descripto por $h(n)$ cuando la entrada vale 
+    \begin{equation*}
+        x_2(n) = \cos\left(\frac{6\pi n}{10}\right), \; \mbox{para todo $n$}
+    \end{equation*}
 \end{ejercicio}

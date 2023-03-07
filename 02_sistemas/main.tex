@@ -9,7 +9,7 @@
 
     \subinciso Determinar si el sistema es lineal.
 
-    \subinciso Encontrar la respuesta del sistema a $x(t)=\delta(t-t_0)$ para cualquier $t_0\in \mathbb{R}$. ¿El sistema es LTI?
+    \subinciso Encontrar la respuesta del sistema a $x(t)=\delta(t-t_0)$ para cualquier $t_0\in \mathbb{R}$. ¿El sistema es invariante en el tiempo?
     
     \subinciso Decidir si es posible obtener cualquier respuesta del sistema a partir de la respuesta a $x(t)=\delta(t-t_0)$.
 \end{ejercicio}
@@ -144,84 +144,6 @@
     \inciso Si $y(n)$ es de duración finita, ¿qué se puede decir sobre la estabilidad del sistema?
 
     \inciso Si $y(n)$ es de duración infinita, obtener algún tipo de condición sobre $y(n)$ que asegure la estabilidad del sistema.
-\end{ejercicio}
-
-\begin{ejercicio}
-    Sea un sistema LTI de tiempo discreto tal que la relación entre la salida y la entrada del mismo se puede escribir como:
-    \begin{equation*}
-        y(n) = \sum_{k=0}^{\infty} \alpha^{n-k} \left(x(k) + \beta x(k-1) + \gamma x(k-2)\right)
-    \end{equation*}
-    donde $|\alpha| < 1$ y $\beta, \gamma \in \R$.
-
-    \inciso Obtener la respuesta al impulso del sistema y graficarla.
-    \inciso Analizar la estabilidad del mismo.
-    \inciso Determinar los valores de $\beta$ y $\gamma$ para que el sistema tenga las siguientes propiedades:
-    \begin{itemize}
-        \item Si $x(n) = (-1)^n$ para todo $n$ entonces $y(n) = 0$ para todo $n$.
-        \item Si $x(n) = 1$ para todo $n$ entonces $y(n) = 1$ para todo $n$.
-    \end{itemize}
-\end{ejercicio}
-
-\begin{ejercicio}
-    Dado un sistema en tiempo discreto definido por la ecuación en diferencias 
-    \begin{equation*}
-        y(n) = x(n) + \frac{3}{4} y(n-1)
-    \end{equation*}
-    con condiciones de contorno
-    \begin{align*}
-    \inciso & y(-1) = 0 & \inciso & y(1) = 0 & \inciso & y(0) = 0 \\[.5em]
-    \inciso & y(0) = 1 & \inciso & \lim_{n\rightarrow -\infty} y(n) = 0  & \inciso & \lim_{n\rightarrow +\infty} y(n) = 0
-    \end{align*}
-    se pide:
-    \begin{itemize}
-        \item Calcular el valor de la respuesta al impulso $h(n)$ del sistema en el intervalo $-5 \leq n \leq 5$
-        \item Obtener una expresión cerrada de $h(n)$ para todo $n \in \mathbb{Z}$.
-        \item Determinar si el sistema lineales, invariante ante desplazamientos, estables y causales.
-    \end{itemize}
-\end{ejercicio}
-    
-\begin{ejercicio}
-
-    Dado un sistema en tiempo discreto definido por la ecuación en diferencias 
-    \begin{equation*}
-        y(n) = x(n) + \frac{1}{2} y(n-1)
-    \end{equation*}
-    con condiciones
-    
-    \inciso iniciales de reposo
-
-    \inciso finales de reposo
-
-    \noindent se pide:
-    \begin{itemize}
-        \item Determinar si el sistema lineales, invariante ante desplazamientos, estables y causales. Establecer cómo se relacionan las condiciones de contorno con cada una de las propiedades del sistema.
-        \item Calcular el valor de la respuesta a las señales $\delta(n-1)$ y $\delta(n+1)$ del sistema en el intervalo $-5 \leq n \leq 5$.
-        \item Obtener una expresión cerrada de la respuesta a las señales $\delta(n-1)$ y $\delta(n+1)$ para todo $n \in \mathbb{Z}$.
-    \end{itemize}
-\end{ejercicio}
-    
-\begin{ejercicio}
-    Demostrar que un sistema definido por ecuaciones en diferencias FIR siempre será lineal, invariante ante desplazamientos y estable. Determinar, además, qué condición debe cumplir un sistema de este tipo para ser causal.
-\end{ejercicio}
-    
-\begin{ejercicio}
-    Obtener la respuesta al impulso para el sistema definido por la ecuación diferencial 
-    \begin{equation*}
-        y(n) = x(n+1) + x(n) + x(n-1) + \frac{3}{4} y(n-1)
-    \end{equation*}
-    en condiciones inciales de reposo. 
-\end{ejercicio}
-    
-\begin{ejercicio}
-    Obtener la respuesta al impulso para el sistema definido por la ecuación diferencial 
-    \begin{equation*}
-        y(n) = x(n+1) + x(n) + x(n-1) + \frac{5}{4} y(n-1)
-    \end{equation*}
-    en condiciones finales de reposo. 
-\end{ejercicio}
-    
-\begin{ejercicio}
-    Implementar en \Keyboardsym una función que permita obtener la respuesta al impulso de una ecuación en diferencias para condiciones iniciales o finales de reposo.
 \end{ejercicio}
     
     

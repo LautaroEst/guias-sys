@@ -38,12 +38,12 @@
     determinar si cada uno de ellos es lineal, invariante ante desplazamientos, estable, causal y si tiene memoria.
 \end{ejercicio}
     
-\begin{ejercicio}
-    Calcular $x(n) * x(n)$ con $x(n)=u(n+3) - u(n-4)$.
-\end{ejercicio}
+% \begin{ejercicio}
+%     Calcular $x(n) * x(n)$ con $x(n)=u(n+3) - u(n-4)$.
+% \end{ejercicio}
     
 \begin{ejercicio}
-    Dado un sistema LTI cuya respuesta impulsiva está dada por un pulso triangular $h(n)=\delta(n+2)+2\delta(n+1)+3\delta(t)+2\delta(t-1)+\delta(t-2)$ al cual se le aplica una entrada $x(n)$ que consiste en un tren de impulsos de período $N$, calcular y graficar la salida $y(n)$ para los siguientes casos:
+    Dado un sistema LTI cuya respuesta impulsiva está dada por un pulso triangular $h(n)=\delta(n+2)+2\delta(n+1)+3\delta(n)+2\delta(n-1)+\delta(n-2)$ al cual se le aplica una entrada $x(n)$ que consiste en un tren de impulsos de período $N$, calcular y graficar la salida $y(n)$ para los siguientes casos:
     \begin{align*}
     \inciso N=6 & \hfill & \inciso N=4 & \hfill & \inciso N=2
     \end{align*}
@@ -58,19 +58,21 @@
 \end{ejercicio}
 
 \begin{ejercicio}
-    Dado un sistema LTI en tiempo discreto con una respuesta al impulso $h(n) = \alpha^n u(n)$ con $\alpha<1$, encontrar la salida del sistema para cada una de las siguientes entradas:
+    Resolver en sus variantes discreta y continua los siguientes enunciados:
+
+    \inciso Dado un sistema LTI en tiempo discreto con una respuesta al impulso $h(n) = \alpha^n u(n)$ con $\alpha<1$, encontrar la salida del sistema para cada una de las siguientes entradas:
+    \vspace*{0.5em}
+
+    \hspace*{1ex} \subinciso $x(n) = \delta(n) - \delta(n-1)$
     
-    \inciso $x(n) = \delta(n) - \delta(n-1)$
+    \hspace*{1ex} \subinciso $x(n) = u(n) - u(n-5)$
+
+    \inciso Dado un sistema LTI en tiempo continuo, encontrar la salida del sistema cuando la entrada es $x(t) = u(t-1)\sin(t)$ si la respuesta al impulso es:
+    \vspace*{0.5em}
+
+    \hspace*{1ex} \subinciso $h(t) = u(t)$ 
     
-    \inciso $x(n) = u(n) - u(n-5)$
-\end{ejercicio}
-    
-\begin{ejercicio}
-    Dado un sistema LTI en tiempo continuo, encontrar la salida del sistema cuando la entrada es $x(t) = u(t-1)\sin(t)$ si la respuesta al impulso es:
-    
-    \inciso $h(t) = u(n)$ 
-    
-    \inciso $h(t) = u(t) - 2u(t-2) + u(t-5)$
+    \hspace*{1ex} \subinciso $h(t) = u(t) - 2u(t-2) + u(t-5)$
 \end{ejercicio}
 
 \begin{ejercicio}
@@ -124,6 +126,38 @@
     \inciso Determinar $h(n)$ tal que $y(n) = h(n) * x(n)$.
 
     \inciso Determinar las condiciones que deben cumplir los parámetros $\alpha_1, \alpha_2, \beta, \gamma$ para que el sistema sea estable.
+\end{ejercicio}
+
+\begin{ejercicio}
+    Sea un sistema LTI en tiempo discreto que satisface simultáneamente las siguientes condiciones:
+    \begin{itemize}
+        \item Si $x(n) = (-2)^n$ la salida es $y(n)=0$
+        \item Si $x(n) = \left(\frac{1}{2}\right)^n u(n)$ la salida es $y(n) = \delta(n) + \alpha \left(\frac{1}{4}\right)^n u(n)$
+    \end{itemize}
+    \inciso Calcular el valor de $\alpha$.
+    
+    \inciso Obtener $y(n)$ cuando $x(n) = 1,\; \forall n \in \Z$
+\end{ejercicio}
+
+\begin{ejercicio}
+    Sea un sistema LTI descrito por $y(n) = \frac{3}{4} x(n) + \frac{1}{4} x(n-1)$.
+
+    \inciso Calcular y graficar la respuesta al impulso $h(n)$ del sistema.
+
+    \inciso Determinar si el sistema es causal y si es estable.
+
+    \inciso Calcular y graficar la salida del sistema cuando la señal de entrada $x(n)$ es:
+    \begin{center}
+        \input{02_sistemas/plots/2-step_delayed}
+    \end{center}
+
+    \inciso Sea el siguiente sistema LTI, donde $h(n)$ es la respuesta al impulso estimada anteriormente:
+    \begin{center}
+        \input{02_sistemas/plots/2-cascade_with_delayed}
+    \end{center}
+    Calcular y graficar la respuesta al impulso del sistema total.
+
+    \inciso Calcular y graficar la salida del sistema de la parte $(\mathbf{d})$ cuando la señal de entrada $x(n)$ es como la entrada del punto $(\mathbf{c})$. ¿Qué se puede decir acerca de la causalidad del sistema?
 \end{ejercicio}
 
 \begin{ejercicio}

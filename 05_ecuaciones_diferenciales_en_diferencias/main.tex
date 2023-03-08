@@ -115,6 +115,14 @@
 \end{ejercicio}
 
 \begin{ejercicio}
+    Sea la señal $x(t)$ cuya transformada de Fourier es $X(j\omega) = u(\omega - W_1) - u(\omega - W_2)$, con $W_1 < W_2$ y sea 
+    \begin{equation*}
+        y(t) = \frac{dx(t)}{dt} * x(t) + x(t)
+    \end{equation*}
+    Obtener $\int_{-\infty}^{\infty} |y(t-\alpha)|^2 dt$ donde $\alpha \in \R$.
+\end{ejercicio}
+
+\begin{ejercicio}
     Sea un sistema LTI cuya entrada es $x(n)$ y salida es $y(n)$. La relación entre la entrada y salida es:
     \begin{equation*}
         y(n) - \alpha y(n-1) = \sum_{k=-\infty}^{\infty} x(k) z(n-k) - x(n)
@@ -135,6 +143,17 @@
     \inciso Determinar la respuesta al impulso $h(n)$ del sistema y la estabilidad del mismo. 
 
     \inciso Encontrar una ecuación en diferencias recursiva para el sistema.
+\end{ejercicio}
+
+\begin{ejercicio}
+    Sea un sistema LTI en tiempo discreto causal con entrada $x(n)$ y salida $y(n)$ definido por el siguiente \emph{par} de ecuaciones diferenciales:
+    \begin{align*}
+        y(n) + \frac{1}{4} y(n-1) + w(n) + \frac{1}{2} w(n-1) &= \frac{2}{3} x(n) \\
+        y(n) - \frac{5}{4} y(n-1) + 2w(n) - 2 w(n-1) &= -\frac{5}{3} x(n)
+    \end{align*}
+    \inciso Obtener la respuesta en frecuencia y la respuesta al impulso del sistema.
+    
+    \inciso Obtener una única ecuación en diferencias que relacione $x(n)$ con $y(n)$.
 \end{ejercicio}
 
 \begin{ejercicio}
@@ -160,3 +179,4 @@
 
     \inciso Si se desea que la amplitud de la quinta armónica de la tensión en los bornes del inductor no supere los $10\;\mathrm{mV}$ dado que el motor debe funcionar cerca de un equipo sensible a la interferencia, determinar el valor de $R_2$ que garantiza eso. 
 \end{ejercicio}
+

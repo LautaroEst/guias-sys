@@ -170,14 +170,6 @@
 \end{ejercicio}
 
 \begin{ejercicio}
-    Sea la señal $x(t)$ cuya transformada de Fourier es $X(j\omega) = u(\omega - W_1) - u(\omega - W_2)$, con $W_1 < W_2$ y sea 
-    \begin{equation*}
-        y(t) = \frac{dx(t)}{dt} * x(t) + x(t)
-    \end{equation*}
-    Obtener $\int_{-\infty}^{\infty} |y(t-\alpha)|^2 dt$ donde $\alpha \in \R$.
-\end{ejercicio}
-
-\begin{ejercicio}
     Sea el siguiente sistema, donde $h_{pb}(n)$ es LTI:
     \begin{center}
     \parbox{.7\textwidth}{\input{04_transformada_fourier/plots/4-pbandas_modulador.tex}}
@@ -197,4 +189,17 @@
     \begin{center}
     \parbox{.7\textwidth}{\input{04_transformada_fourier/plots/4-pbandas_modulador2.tex}}
     \end{center}
+\end{ejercicio}
+
+\begin{ejercicio}
+    Sea el sistema de la figura:
+    \begin{center}
+        \parbox{.7\textwidth}{\input{04_transformada_fourier/plots/4-modulador3}}
+    \end{center}
+    donde
+    \begin{align*}
+        \parbox{.4\textwidth}{\input{04_transformada_fourier/plots/4-modulador3_input}} &
+        \parbox{.4\textwidth}{\input{04_transformada_fourier/plots/4-modulador3_pb}}
+    \end{align*}
+    Graficar los espectros en frecuencias de las señales $g_1(n)$, $g_2(n)$, $g_3(n)$, $g_4(n)$ y $y(n)$.
 \end{ejercicio}

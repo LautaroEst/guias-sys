@@ -54,28 +54,34 @@
             -2 & \mbox{si } 1 < t < 2 
         \end{cases}
     \end{equation*}
-    con período $T=2$ y el tren de impulsos $g(t) = \sum_{k=-\infty}^{\infty} \delta(t-2k)$, el cual también tiene período $T=2$. Comprobar que
+    con período $T=2$ y el tren de impulsos $g(t) = \sum_{k=-\infty}^{\infty} \delta(t-2k)$. 
+    
+    \inciso Comprobar que
     \begin{equation*}
         \frac{dx(t)}{dt} = A_1 g(t-t_1) + A_2 g(t-t_2)
     \end{equation*}
-    para algún $t_1, t_2, A_1, A_2 \in \R$. 
-    
-    \inciso Obtener $A_1, A_2, t_1, t_2$.
+    para algún $t_1, t_2, A_1, A_2 \in \R$ y obtener $A_1, A_2, t_1, t_2$.
 
     \inciso Graficar $x(t)$ y $\frac{dx(t)}{dt}$.   
 \end{ejercicio}
 
 
 \begin{ejercicio}
-    Sea $x(t)$ una señal de tiempo continuo, y sean $y_1(t) = x(2 t)$ y $y_2(t) = x(t / 2)$. Determinar si las siguientes afirmaciones son verdaderas o falsas y justificar con demostración o contraejemplo según corresponda. Obtener el período fundamental de $y_1(t)$ y $y_2(t)$.
+    Sea $x(t)$ una señal de tiempo continuo, y sean $y_1(t) = x(2 t)$ y $y_2(t) = x(t / 2)$. 
     
-    \inciso Si $x(t)$ es periódica, entonces $y_1(t)$ es periódica.
+    \inciso Determinar si las siguientes afirmaciones son verdaderas o falsas y justificar con demostración o contraejemplo según corresponda.
+
+    \vspace*{1.5ex}
     
-    \inciso Si $y_1(t)$ es periódica, entonces $x(t)$ es periódica.
+    \hspace*{0.1em} \subinciso Si $x(t)$ es periódica, entonces $y_1(t)$ es periódica.
     
-    \inciso Si $x(t)$ es periódica, entonces $y_2(t)$ es periódica.
+    \hspace*{0.1em} \subinciso Si $y_1(t)$ es periódica, entonces $x(t)$ es periódica.
     
-    \inciso Si $y_2(t)$ es periódica, entonces $x(t)$ es periódica.
+    \hspace*{0.1em} \subinciso Si $x(t)$ es periódica, entonces $y_2(t)$ es periódica.
+    
+    \hspace*{0.1em} \subinciso Si $y_2(t)$ es periódica, entonces $x(t)$ es periódica.
+
+    \inciso Determinar, si existe, el período fundamental de $y_1(t)$ y $y_2(t)$.
     
 \end{ejercicio}
 
@@ -194,20 +200,24 @@ x(n/2) & \mbox{si $n$ es par} \\
 0 & \mbox{en otro caso}
 \end{cases}
 \end{equation*}
-Determinar si las siguientes afirmaciones son verdaderas o falsas y justificar con demostración o contraejemplo según corresponda. Obtener el período fundamental de $y_1(n)$ y $y_2(n)$.
+\hspace*{-1.5ex}\inciso Determinar si las siguientes afirmaciones son verdaderas o falsas y justificar con demostración o contraejemplo según corresponda.
 
-\inciso Si $x(n)$ es periódica, entonces $y_1(n)$ es periódica.
+\vspace*{1.5ex}
 
-\inciso Si $y_1(n)$ es periódica, entonces $x(n)$ es periódica.
+\hspace*{0.1em} \subinciso Si $x(n)$ es periódica, entonces $y_1(n)$ es periódica.
 
-\inciso Si $x(n)$ es periódica, entonces $y_2(n)$ es periódica.
+\hspace*{0.1em} \subinciso Si $y_1(n)$ es periódica, entonces $x(n)$ es periódica.
 
-\inciso Si $y_2(n)$ es periódica, entonces $x(n)$ es periódica.
+\hspace*{0.1em} \subinciso Si $x(n)$ es periódica, entonces $y_2(n)$ es periódica.
+
+\hspace*{0.1em} \subinciso Si $y_2(n)$ es periódica, entonces $x(n)$ es periódica.
+
+\inciso Obtener, si existe, el período fundamental de $y_1(n)$ y $y_2(n)$.
 
 \end{ejercicio}
 
 \begin{ejercicio}
-Sea $x(t)=e^{j\omega_0t}$ la señal exponencial compleja en tiempo continuo con período fundamental $T_0=\frac{2\pi}{\omega_0}$. Considere la señal discreta obtenida al tomar muestras de $x(t)$ equiespaciadas:
+Sea $x(t)=e^{j\omega_0t}$ la señal exponencial compleja en tiempo continuo con período fundamental $T_0=\frac{2\pi}{\omega_0}$. Sea la siguiente señal discreta obtenida al tomar muestras de $x(t)$ equiespaciadas:
 \begin{equation*}
     x_d(n) = x(nT_s) = e^{j\omega_0t}\big|_{t=nT_s} = e^{j\omega_0nT_s}
 \end{equation*}

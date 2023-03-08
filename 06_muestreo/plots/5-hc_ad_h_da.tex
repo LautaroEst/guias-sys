@@ -1,0 +1,22 @@
+\begin{tikzpicture}[scale=1, transform shape]
+    \node[rectangle, very thick, draw, minimum width=2cm, minimum height=1cm] (ad) at (0,0) {\large A/D};
+    \node[rectangle, very thick, draw, minimum width=2cm, minimum height=1cm, xshift=-4cm] (hc) at (ad) {$H_c(j\omega)$};
+    \node[rectangle, very thick, draw, minimum width=2cm, minimum height=1cm, xshift=4cm] (h) at (ad) {$H(e^{j\Omega})$};
+    \node[rectangle, very thick, draw, minimum width=2cm, minimum height=1cm,xshift=4cm] (da) at (h) {\large D/A};
+
+    \node[xshift=-2cm] (r_c) at (hc) {$r_c(t)$};
+    \node[xshift=2cm] (y_c) at (da) {$y_c(t)$};
+    \node[yshift=0.4cm,xshift=2cm] (y_n) at (h) {$y(n)$};
+    \node[xshift=-2cm,yshift=0.4cm] (x_c) at (ad) {$x_c(t)$};
+    \node[xshift=2cm,yshift=0.4cm] (x_n) at (ad) {$x(n)$};
+    \node[yshift=-1.2cm,xshift=0.4cm] (t1) at (ad) {$T_1$};
+    \node[yshift=-1.2cm,xshift=0.4cm] (t2) at (da) {$T_2$};
+
+    \draw[->, very thick] (hc.east) -- (ad.west);
+    \draw[->, very thick] (ad.east) -- (h.west);
+    \draw[->, very thick] (r_c.east) -- (hc.west);
+    \draw[->, very thick] (h.east) -- (da.west);
+    \draw[->, very thick] (da.east) -- (y_c.west);
+    \draw[->, very thick] (ad.south) ++ (0,-1cm) -- (ad.south) ;
+    \draw[->, very thick] (da.south) ++ (0,-1cm) -- (da.south) ;
+\end{tikzpicture}

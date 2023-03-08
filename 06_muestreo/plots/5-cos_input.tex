@@ -1,0 +1,13 @@
+\begin{tikzpicture}
+    \node[circle,inner sep=0.05cm, draw, very thick] (x) at (0,0) {\large $\times$};
+    \node[above=1.5cm] (deltatrain) at (x) {$p(t) = \sum_{n=-\infty}^{\infty} \delta(t-nT)$};
+    \node[left=1.5cm] (x_t) at (x) {$x(t)$} ;
+    \node[right=1.5cm,rectangle,draw,very thick,inner sep=0.5cm] (H_jw) at (x) {$H_c(j\omega)$} ;
+    \node[right=2cm] (x_r) at (H_jw) {$y_c(t)$} ;
+    \node[above=5cm,right=.4cm] at (x.north) {$x_p(t)$} ;
+    
+    \draw[->,very thick] (deltatrain) -- (x) ;
+    \draw[->,very thick] (x_t) -- (x) ;
+    \draw[->,very thick] (x) -- (H_jw) ;
+    \draw[->,very thick] (H_jw) -- (x_r) ;
+\end{tikzpicture}

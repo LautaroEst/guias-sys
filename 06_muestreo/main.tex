@@ -20,15 +20,22 @@
     
     \inciso Determinar para qué rango de valores de $T$, el sistema completo con entrada $x_c(t)$ de banda limitada ($2\pi f_M=\mbox{frecuencia máxima de la señal}$) y salida $y_r(t)$ es equivalente al sistema LTI con respuesta en frecuencia $H_{eff}(j\omega)=\begin{cases}1 & \mbox{si $\omega \in (-\omega_c,\omega_c)$}\\ 0 & \mbox{en otro caso}\end{cases}$. Determinar el valor de $\omega_c$ en función de $T$.
     
-    \end{ejercicio}
+\end{ejercicio}
     
     
-    \begin{ejercicio}
+\begin{ejercicio}
     La señal discreta $x_d(n)=\cos\left(\frac{\pi}{4}n\right)$ con $n\in\mathbb{Z}$ se obtuvo del muestreo de la señal continua $x_c(n)=\cos\left(\omega_0 t\right)$ con $t\in\mathbb{R}$ a una frecuencia de muestreo $F_S = 1000\;\mathrm{Hz}$. ¿Qué valores de $\omega_0$ positivos resultarían en la secuencia $x_d(n)$?
-    \end{ejercicio}
+\end{ejercicio}
+
+\begin{ejercicio}
+    Sea el siguiente sistema de muestreo
+    \begin{center}
+    \input{06_muestreo/plots/5-cos_input}
+    \end{center}
+    donde $H_c(j\omega)$ es un pasabajos ideal con frecuencia de corte $\frac{\omega_s}{2}$ y ganancia $T$ y donde $\omega_s = \frac{2\pi}{T}$. En este sistema, cuando la entrada vale $x_c(t) = \cos(\omega_0 t)$ la salida es $y_c(t) = \cos(\omega_0 t)$. Por otro lado, cuando $x_c(t) = \cos(10\omega_0 t)$ la salida es $y_c(t) = \cos(2\omega_0 t)$. Determinar un valor de $\omega_s$ compatible con esta situación y graficar los espectros de $x_p(t)$ para los dos casos, explicando clararmente la situación en cada uno de ellos.
+\end{ejercicio}
     
-    
-    \begin{ejercicio}
+\begin{ejercicio}
     Dado el siguiente sistema de muestreo
     \begin{center}
     \input{06_muestreo/plots/5-2}
@@ -37,17 +44,17 @@
     \begin{center}
     \input{06_muestreo/plots/5-2bis}
     \end{center}
-    \end{ejercicio}
+\end{ejercicio}
     
-    \begin{ejercicio}
+\begin{ejercicio}
     Sea el sistema de muestreo como se muestra a continuación:
     \begin{center}
     \input{06_muestreo/plots/5-3}
     \end{center}
     Para $x(t)=\cos\left(\frac{2\pi}{T}t\right)$ encontrar el intervalo de valores de $\Delta$ de manera que $y(t)$ sea proporcional a $x(at)$ para algún $a\in(0,1)$. Determinar el valor de $a$ en términos de $T$ y de $\Delta$.
-    \end{ejercicio}
+\end{ejercicio}
     
-    \begin{ejercicio}
+\begin{ejercicio}
     Sea el siguiente sistema de muestreo
     \begin{center}
     \input{06_muestreo/plots/5-4}
@@ -66,9 +73,9 @@
     
     \inciso Determinar el valor \emph{máximo} de $T$ en relación a $\omega_M$ para el cual $x(t)$ puede recuperarse a partir de $x_p(t)$ o de $y(t)$.
     
-    \end{ejercicio}
+\end{ejercicio}
     
-    \begin{ejercicio}
+\begin{ejercicio}
     En la siguiente figura se muestra un sistema en el cual la señal de entrada es multiplicada por una onda cuadrada periódica $s(t)$ de período $T$. 
     \begin{center}
     \input{06_muestreo/plots/5-5}
@@ -78,9 +85,9 @@
     \inciso Para $\Delta=\frac{T}{3}$ determinar en términos de $\omega_M$ el valor máximo de $T$ para el cual no hay traslape entre las réplicas de $X(j\omega)$ en $W(j\omega)$.
     
     \inciso Para $\Delta=\frac{T}{4}$ determinar en términos de $\omega_M$ el valor máximo de $T$ para el cual no hay traslape entre las réplicas de $X(j\omega)$ en $W(j\omega)$
-    \end{ejercicio}
+\end{ejercicio}
     
-    \begin{ejercicio}
+\begin{ejercicio}
     Escribir las ecuaciones en diferencias de un interpolador de orden cero y otro de orden uno, en su versión discreta. 
     
     \inciso Implementar las ecuaciones en \Keyboardsym
@@ -94,17 +101,58 @@
     \end{equation*}
     
     \inciso ¿Es posible implementar realmente una interpolación ideal? ¿Qué aproximaciones se podrían hacer para obtenerlo y cómo se altera el espectro de la señal al hacerlas?
-    \end{ejercicio}
-    
-    \begin{ejercicio}
-    Dados los siguientes sistemas en cascada
+\end{ejercicio}
+
+\begin{ejercicio}
+    Sea el siguiente sistema:
     \begin{center}
-        \input{06_muestreo/plots/5-up_down_eq}
+        \input{06_muestreo/plots/5-hc_ad_h}
     \end{center}
-    determinar la respuesta en frecuencia del sistema equivalente $H_{eff}(e^{j\Omega})$.
-    \end{ejercicio}
-    
-    \begin{ejercicio}
+    donde se sabe que el sistema $H_c(j\omega)$ es LTI, causal y se describe mediante:
+    \begin{equation*}
+        \frac{dx_c(t)}{dt} + \alpha x_c(t) = r_c(t), \; \alpha > 0,\; \mbox{con condición de reposo incial}
+    \end{equation*}
+    Sea, además, la señal $r_c(t) = u(t) - u(t-T_1)$, donde $T_1$ es también el período de muestreo del conversor A/D ideal de la figura.
+
+    \inciso Obtener la señal $x_c(t)$.
+
+    \inciso Encontrar el sistema LTI de tiempo discreto $H(e^{j\Omega})$ tal que $y(n) = \delta(n) - 2\delta(n-1) + \delta(n-2)$. De ser posible, obtener una ecuación en diferencias para dicho sistema.
+\end{ejercicio}
+
+\begin{ejercicio}
+    Sea el siguiente sistema:
+    \begin{center}
+        \input{06_muestreo/plots/5-hc_ad_h_da}
+    \end{center}
+    donde $r_c(t) = \cos^2(\omega_0t)\cos^2(2\omega_0t)$ y los conversores A/D y D/A son ideales. El filtro $H_c(j\omega)$ es un filtro pasabajos ideal con frecuencia de corte $3\omega_0$. Además, $T_1=\frac{2\pi}{3\omega_0}$.
+
+    \inciso Asumiendo que $T_1=T_2$ y que $H(e^{j\Omega})=1$ para todo $\Omega \in [-\pi,\pi]$, calcular la salida $y_c(t)$ del sistema y dibujar los espectros en frecuencias de cada una de las señales presentes en la figura.
+
+    \inciso Diseñar un filtro $H(e^{j\Omega})$ y obtener un valor de $T_2$ apropiado para que la salida del sistema sea $y_c(t)=\cos(2\omega_0 t)$.
+\end{ejercicio}
+
+\begin{ejercicio}
+    Sea la señal $z(t) = x(t) + y(t)$ donde
+    \begin{align*}
+        x(t) = \frac{\sin^2\left(\frac{W}{2}t\right)}{\pi^2t^2} & \hspace*{1em} & y(t) = 2\frac{\sin\left(\frac{W}{2}t\right)}{\pi t} \cos\left(\frac{5W}{2}t\right)
+    \end{align*}
+    La señal $z(t)$ ingresa a un conversor A/D ideal con frecuencia de muestreo $\omega_s$.
+
+    \inciso Calcular la frecuencia de Nyquist para esta señal.
+
+    \inciso Diseñar un sistema que permita, con la mínima frecuencia de muestreo posible, recuperar la señal $y(t)$ usando las muestras $z(n)$ que se obtienen a la salida del conversor A/D. El sistema puede contener partes en tiempo discreto y tiempo continuo.
+\end{ejercicio}
+
+
+% \begin{ejercicio}
+%     Dados los siguientes sistemas en cascada
+%     \begin{center}
+%         \input{06_muestreo/plots/5-up_down_eq}
+%     \end{center}
+%     determinar la respuesta en frecuencia del sistema equivalente $H_{eff}(e^{j\Omega})$.
+% \end{ejercicio}
+   
+\begin{ejercicio}
     Sea $x_c(t)$ una señal real de tiempo continuo cuya frecuencia superior es $\omega_M = 2\pi 250\mathrm\;{Hz}$, y la señal $y_c(t)$ definida como $y_c(t) = x_c(t - \frac{1}{1000})$.
     
     \inciso Determinar si es posible recuperar $x_c(t)$ a partir de $x(n)=x_c(\frac{n}{500})$.
@@ -119,4 +167,63 @@
     
     \inciso Determinar si es posible obtener $y(n)$ a partir de $x(n)$ utilizando un único sistema LTI con respuesta en frecuencia $H_{eff}(e^{j\Omega})$. En caso de que así sea, obtener $H_{eff}(e^{j\Omega})$.
     
-    \end{ejercicio}
+\end{ejercicio}
+
+\begin{ejercicio}
+    Sea la señal
+    \begin{equation*}
+        x_c(t) = \sum_{k=-\infty}^{\infty} \alpha(k) g(t - kT_0)
+    \end{equation*}
+    donde $\alpha(k)$ es una secuencia de tiempo discreto tal que $\sum_{k=-\infty}^{\infty} |\alpha(k)| < \infty$ y $g(t)$ es una señal de banda limitada con ancho de banda $W = \frac{2 \pi}{T_0}$. La señal $x_c(t)$ ingresa al siguiente sistema:
+    \begin{center}
+        \input{06_muestreo/plots/5-pulse_g}
+    \end{center}
+    en donde el conversor A/D tiene frecuencia de muestreo igual a la de Nyquist y el sistema $H(e^{j\Omega})$ es un filtro LTI de tiempo discreto.
+
+    \inciso Justificar que $x_c(t)$ es de banda limitada y determinar $Y(e^{j\Omega})$.
+
+    \inciso Asumiendo que $H(e^{j\Omega}) = \frac{T}{G(j\frac{\Omega}{T})}$ con $T$ el período de muestreo, ¿es posible recuperar la secuencia $\alpha(k)$ a partir de la salida $y(n)$? En caso afirmativo, diseñar un sistema de tiempo discreto que permita recuperar la señal mencionada.
+\end{ejercicio}
+
+\begin{ejercicio}
+    Sea el siguiente sistema:
+    \begin{center}
+        \input{06_muestreo/plots/5-ad_up_h_down_da}
+    \end{center}
+    donde 
+    \begin{align*}
+        \parbox{0.5\textwidth}{
+                \input{06_muestreo/plots/5-r_c}
+        } & H(e^{e^{j\Omega}}) = \begin{cases}
+            1 & |\Omega| \leq \Omega_0 \\
+            0 & \text{en otro caso}
+            \end{cases}
+    \end{align*}
+    y los conversores A/D y D/A son ideales. 
+
+    \inciso Obtener $R(e^{j\Omega})$ y $X(e^{j\Omega})$.
+
+    \inciso Determinar $\Omega_0$, $T_2$ y $\alpha$ tales que $y(n) = \alpha r_c(nT_2)$.
+
+    \inciso Con el valor de $\Omega_0$ hallado en el punto anterior, obtener $T_3$ y $\beta$ tales que $s_c(t) = \beta r_c(t)$.
+\end{ejercicio}
+
+\begin{ejercicio}
+    Sea el sistema de la figura:
+    \begin{center}
+        \input{06_muestreo/plots/5-ad_up_h_mult_da}
+    \end{center}
+    Tanto el conversor A/D como el D/A son ideales ($T = \frac{4}{3}\;\mathrm{s}$). Por otro lado, el espectro en frecuencias de $x(t)$ y la respuesta en frecuencia del sistema $H(e^{j\Omega})$ son los siguientes:
+    \begin{align*}
+        \parbox{0.5\textwidth}{
+            \begin{center}
+                \input{06_muestreo/plots/5-ad_up_h_mult_da_x}
+            \end{center}
+        } & \hspace*{1em} & \parbox{0.5\textwidth}{
+            \begin{center}
+                \input{06_muestreo/plots/5-ad_up_h_mult_da_h}
+            \end{center}
+        }
+    \end{align*}        
+    Dibujar los espectros de $x(n)$, $x_1(n)$, $x_2(n)$, $y(n)$ y $y(t)$.
+\end{ejercicio}

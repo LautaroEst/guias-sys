@@ -1,0 +1,14 @@
+\begin{tikzpicture}[scale=1, transform shape]
+    \node[rectangle, draw, very thick, minimum width=1cm, minimum height=1cm] (h) at (0,0) {$H(e^{j\Omega})$} ;
+    \node[rectangle, draw, very thick, minimum width=1cm, minimum height=1cm, xshift=-2.5cm] (ad) at (h) {\large A/D} ;
+    \node[xshift=-2cm] (x_c) at (ad) {$x_c(t)$} ;
+    \node[xshift=-1.3cm,yshift=0.4cm] (x_n) at (h) {$x(n)$} ;
+    \node[xshift=2cm] (y_n) at (h) {$y(n)$} ;
+    \node[yshift=-1.5cm] (t) at (ad) {} ;
+    \node[yshift=-1.1cm,xshift=0.4cm] (t_label) at (ad) {$T$} ;
+
+    \draw[->, very thick] (ad.east) -- (h.west) ;
+    \draw[->, very thick] (h.east) -- (y_n) ;
+    \draw[->, very thick] (x_c) -- (ad.west) ;
+    \draw[->, very thick] (t) -- (ad.south) ;
+\end{tikzpicture}

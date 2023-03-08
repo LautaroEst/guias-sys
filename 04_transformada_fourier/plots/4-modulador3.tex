@@ -1,3 +1,33 @@
-\begin{tikzpicture}
-    
+\begin{tikzpicture}[scale=0.8, transform shape]
+    \node[circle,draw,thick,inner sep=0.03cm] (plus) at (0,0) {\Large +} ;
+    \node[circle,draw,thick,inner sep=0.03cm, yshift=2.8cm] (mult_cos_after) at (plus) {\Large $\times$} ;
+    \node[rectangle,draw,thick,inner sep=0.3cm, xshift=-3cm] (hpb_cos) at (mult_cos_after) {$H_{pb}(\Omega)$} ;
+    \node[rectangle,draw,thick,inner sep=0.3cm, xshift=-3cm] (hpb_sin) at (plus) {$H_{pb}(\Omega)$} ;
+    \node[circle,draw,thick,inner sep=0.03cm, xshift=-3cm] (mult_cos_before) at (hpb_cos) {\Large $\times$} ;
+    \node[yshift=-2.8cm] (arrow_split) at (mult_cos_before) {} ;
+    \node[xshift=-8cm] (x_n) at (plus) {$x(n)$} ;
+    \node[xshift=2cm] (y_n) at (plus) {$y(n)$} ;
+
+    \node[xshift=-2cm] (minus1_before) at (mult_cos_before) {$(-1)^n$} ;
+    \node[xshift=2cm] (minus1_after) at (mult_cos_after) {$(-1)^n$} ;
+
+    \draw[very thick] (x_n.east) -- (arrow_split.center) ;
+    \draw[->, very thick] (arrow_split.center) -- (mult_cos_before.south) ;
+    \draw[->, very thick] (arrow_split.center) -- (hpb_sin.west) ;
+
+    \draw[->, very thick] (minus1_before.east) -- (mult_cos_before.west) ;
+    \draw[->, very thick] (minus1_after.west) -- (mult_cos_after.east) ;
+
+    \draw[->, very thick] (mult_cos_before.east) -- (hpb_cos.west);
+    \draw[->, very thick] (hpb_cos.east) -- (mult_cos_after.west) ;
+    \draw[->, very thick] (hpb_sin.east) -- (plus.west) ;
+    \draw[->, very thick] (mult_cos_after.south) -- (plus.north) ;
+
+    \draw[->, very thick] (plus.east) -- (y_n.west) ;
+
+    \node[xshift=1.7cm, yshift=-0.4cm] (g_1) at (hpb_sin) {$g_1(n)$} ;
+    \node[xshift=1.7cm, yshift=0.4cm] (g_3) at (hpb_cos) {$g_3(n)$} ;
+    \node[xshift=-1.8cm, yshift=0.4cm] (g_2) at (hpb_cos) {$g_2(n)$} ;
+    \node[xshift=0.6cm, yshift=1.5cm] (g_4) at (plus) {$g_4(n)$} ;
+
 \end{tikzpicture}

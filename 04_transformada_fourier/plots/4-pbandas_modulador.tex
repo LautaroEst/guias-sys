@@ -1,2 +1,34 @@
-\begin{tikzpicture}[scale=0.6, transform shape]
+\begin{tikzpicture}[scale=0.8, transform shape]
+    \node[circle,draw,thick,inner sep=0.03cm] (plus) at (0,0) {\Large +} ;
+    \node[circle,draw,thick,inner sep=0.03cm, xshift=-2cm, yshift=1cm] (mult_cos_after) at (plus) {\Large $\times$} ;
+    \node[circle,draw,thick,inner sep=0.03cm, xshift=-2cm, yshift=-1cm] (mult_sin_after) at (plus) {\Large $\times$} ;
+    \node[rectangle,draw,thick,inner sep=0.3cm, xshift=-2.5cm] (hpb_cos) at (mult_cos_after) {$h_{pb}(n)$} ;
+    \node[rectangle,draw,thick,inner sep=0.3cm, xshift=-2.5cm] (hpb_sin) at (mult_sin_after) {$h_{pb}(n)$} ;
+    \node[circle,draw,thick,inner sep=0.03cm, xshift=-2.5cm] (mult_cos_before) at (hpb_cos) {\Large $\times$} ;
+    \node[circle,draw,thick,inner sep=0.03cm, xshift=-2.5cm] (mult_sin_before) at (hpb_sin) {\Large $\times$} ;
+    \node[xshift=-8cm] (arrow_split) at (plus) {} ;
+    \node[xshift=-9cm] (x_n) at (plus) {$x(n)$} ;
+    \node[xshift=2cm] (y_n) at (plus) {$y(n)$} ;
+
+    \node[xshift=-2cm,yshift=1.5cm] (cos) at (mult_cos_before) {$\cos(\Omega_o n)$} ;
+    \node[xshift=-2cm,yshift=-1.5cm] (sin) at (mult_sin_before) {$\sin(\Omega_o n)$} ;
+
+    \draw[very thick] (x_n.east) -- (arrow_split.center) ;
+    \draw[->, very thick] (arrow_split.center) |- (mult_cos_before) ;
+    \draw[->, very thick] (arrow_split.center) |- (mult_sin_before) ;
+
+    \draw[->, very thick] (cos.east) -| (mult_cos_before.north) ;
+    \draw[->, very thick] (cos.east) -| (mult_cos_after.north) ;
+    \draw[->, very thick] (sin.east) -| (mult_sin_before.south) ;
+    \draw[->, very thick] (sin.east) -| (mult_sin_after.south) ;
+
+    \draw[->, very thick] (mult_cos_before.east) -- (hpb_cos.west) ;
+    \draw[->, very thick] (mult_sin_before.east) -- (hpb_sin.west) ;
+    \draw[->, very thick] (hpb_cos.east) -- (mult_cos_after.west) ;
+    \draw[->, very thick] (hpb_sin.east) -- (mult_sin_after.west) ;
+    \draw[->, very thick] (mult_cos_after.east) -| (plus.north) ;
+    \draw[->, very thick] (mult_sin_after.east) -| (plus.south) ;
+
+    \draw[->, very thick] (plus.east) -- (y_n.west) ;
+
 \end{tikzpicture}
